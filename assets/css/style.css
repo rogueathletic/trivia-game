@@ -1,8 +1,8 @@
 #body{
   background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/libraryhuge.jpg?raw=true");
-  width: 100%;
-  height: 100%;
-  position:static;
+  width: auto;
+  height: auto;
+  position:;
 }
 
 #jumbotron {
