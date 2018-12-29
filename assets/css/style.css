@@ -1,0 +1,198 @@
+#body{
+  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/libraryhuge.jpg?raw=true");
+  width: 100%;
+  height: 100%;
+  position:static;
+}
+
+#jumbotron {
+  width: 80%;
+  height: initial;
+  border-radius: 20px;
+  margin: auto;
+  position: relative;
+  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/game-pattern.png?raw=true"), radial-gradient(white, darkgrey, black);
+  background-size: 100%;
+  -webkit-box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
+-moz-box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.20);
+box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
+}
+
+#jumbotron:before,
+#jumbotron:after {
+  z-index: -1;
+  position: absolute;
+  bottom: 25px;
+  left: 5em;
+  width: 50%;
+  top: 80%;
+  /* background: #777;
+  -webkit-box-shadow: 0 35px 20px #777;
+  -moz-box-shadow: 0 35px 20px #777;
+  box-shadow: 0 35px 20px #777;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg); */
+}
+
+#jumbotron:after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+
+.btn {
+  border-radius: 1em;;
+  margin-right: 20%;
+  margin-left:18%;
+  margin-top:-1em;
+  margin-bottom: 3em;
+  font-size:20px;
+  min-width: initial;
+  float:right;
+height: auto;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .2), rgba(255, 255, 255, .4),
+  rgba(255, 255, 255, 0.548), rgba(255, 255, 255, .4),rgba(255, 255, 255, .2), rgba(255, 255, 255, .1));
+  background-size: 40%;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #000000;
+  text-align:center;
+  display: flex;
+  justify-content:space-around;
+  text-shadow: 2px 2px 2px rgba(0,0,0, .8);
+  
+}
+#quiz {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .002), rgba(255, 255, 255, .2), rgba(255, 255, 255, .4),
+  rgba(255, 255, 255, .5), rgba(255, 255, 255, .4),rgba(255, 255, 255, .2), rgba(255, 255, 255, .002));
+  width: auto;
+  margin: 1em;
+  padding-top: 1em;
+  color: black;
+  padding-bottom: .5em;
+  text-align: center;
+  left: auto;
+  font-size: 32px;
+  text-shadow: 3 px 3px 3px rgba(255, 255, 255, 1);
+}
+#start{
+  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start-off.png?raw=true");
+  background-size: contain;
+  height: 150px;
+  width: 150px;
+  display:flex;
+  justify-content:space-around;
+  margin-left: 40%;
+  margin-bottom: 4%;
+}
+#start:hover{
+  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start-hover.png?raw=true");
+
+
+}
+#start:active{
+  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start.png?raw=true");
+
+}
+#score-up{
+  color:yellowgreen;
+  /* float:right; */
+  text-shadow: 0 0 10px rgb(0,0,0,1);
+  
+}
+#timer{
+  color: white;
+  font-size:50pt;
+  text-shadow: 4px 4px 5px rgb(0, 0, 0);
+}
+#down{
+  color:red;
+  /* float:left; */
+  text-shadow: 0 0 10px rgb(0,0,0,1);
+
+}
+.dropdown{
+color: #06d406;
+font-size: 12pt;
+text-align: right;
+text-shadow: 0 0 10px rgb(0,0,0,.6);
+
+}
+@media only screen and (max-width: 500px) {
+  .btn {
+    background-color: rgb(0, 0, 0);
+    background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/game-pattern.png?raw=true");
+ margin-left: 10%;
+ padding:2%;
+ margin-top: 0%;
+ text-align: center;
+ border-radius: .5em;
+
+  }
+}
+@media only screen and (max-width: 500px) {
+  .my-name {
+background-image: linear-gradient(90deg, rgba(255, 255, 255, .0000005), rgba(255, 255, 255, .0003), rgba(255, 255, 255, .2),
+    rgba(255, 255, 255, 0.0010), rgba(255, 255, 255, .05),rgba(255, 255, 255, .05), rgba(255, 255, 255, .1));
+ margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #start,
+  #start:hover
+  #start:Active {
+    
+ margin-left: 30%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #down {
+margin-top:  -8%;
+ margin-left: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #score-up {
+margin-left:  -238%;
+ margin-left: 80%;
+  }
+}
+
+/* @media only screen and (max-width: 500px) {
+  #timer {
+margin-top:220%;
+  }
+} */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: #06d406;
+  font-size: 12pt;
+  text-shadow: 4px 4px 3px rgb(0,0,0,.8);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:transparent;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#personal-link{
+  color: #66cccc;
+  /* #80ff80; */
+}
