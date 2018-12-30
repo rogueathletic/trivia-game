@@ -3,11 +3,35 @@
   width: auto;
   height: auto;
   margin-top: 0%;
-  position:sticky;
+  position:relative;
   background-repeat: repeat;
   background-position: top;
  
 }
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box div {
+  width: 100px;
+  height: 100px;
+}
+  
+.box1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1 div {
+  width: 100px;
+  height: 100px;
+}
+
+
 
 #jumbotron {
   width: 60%;
@@ -31,15 +55,7 @@ box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
   left: 5em;
   width: 50%;
   top: 80%;
-  /* background: #777;
-  -webkit-box-shadow: 0 35px 20px #777;
-  -moz-box-shadow: 0 35px 20px #777;
-  box-shadow: 0 35px 20px #777;
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  -o-transform: rotate(-8deg);
-  -ms-transform: rotate(-8deg);
-  transform: rotate(-8deg); */
+
 }
 
 #jumbotron:after {
@@ -55,24 +71,20 @@ box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
 
 .btn {
   border-radius: 1em;;
-  margin-right: 20%;
-  margin-left:14%;
   margin-top:1em;
-  /* margin-bottom: 1em; */
+  margin-left:-5%;
   min-width: 70%;
   width: auto;
-  /* float:right; */
-height: auto;
+  height: auto;
   background-image: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .2), rgba(255, 255, 255, .4),
   rgba(255, 255, 255, 0.548), rgba(255, 255, 255, .4),rgba(255, 255, 255, .2), rgba(255, 255, 255, .1));
   background-size: 40%;
-  padding: 1px;
+  padding-top: 1em;
   box-shadow: 5px 10px 18px #000000;
   text-align:center;
   display: flex;
-  justify-content:space-around;
+  justify-content:center;
   text-shadow: 2px 2px 2px rgba(0,0,0, .8);
-  
 }
 #quiz {
     background-image: linear-gradient(90deg, rgba(255, 255, 255, .002), rgba(255, 255, 255, .2), rgba(255, 255, 255, .4),
@@ -89,13 +101,15 @@ height: auto;
 }
 #start{
   background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
-  background-size: contain;
+  background-size: 100%;
+  background-repeat: no-repeat;
   height: 150px;
   width: 150px;
   display:flex;
   justify-content:space-around;
-  margin-left: 44%;
-  margin-bottom: 4%;
+  /* margin-left: 44%;
+  margin-right: 44%;
+  margin-bottom: 4%; */
 }
 #start:hover{
   background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
@@ -133,45 +147,7 @@ text-align: right;
 text-shadow: 0 0 10px rgba(0,0,0,.6);
 
 }
-@media only screen and (max-width: 500px) {
-  .btn {
-    background-color: rgb(0, 0, 0);
-    text-shadow: 2px, 2px, 3px rgb(0,0,0);
- margin-left: 10%;
- padding:2%;
- margin-top: 0%;
- text-align: center;
- border-radius: .5em;
 
-  }
-}
-@media only screen and (max-width: 500px) {
-  .my-name {
-background-image: linear-gradient(90deg, rgba(255, 255, 255, .0000005), rgba(255, 255, 255, .0003), rgba(255, 255, 255, .2),
-    rgba(255, 255, 255, 0.0010), rgba(255, 255, 255, .05),rgba(255, 255, 255, .05), rgba(255, 255, 255, .1));
- margin-left: 10%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #start,
-  #start:hover
-  #start:Active {
-    
- margin-left: 30%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #down {
-margin-top:  -8%;
- margin-left: 80%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #score-up {
-margin-left:  -238%;
- margin-left: 80%;
-  }
-}
 
 /* @media only screen and (max-width: 500px) {
   #timer {
@@ -215,11 +191,63 @@ margin-top:220%;
 }
 #ql{
   color: darkslategrey;
-  float:right;
+  Float:center;
+  /* float:right; */
   text-align: center;
-  position: relative;
+  /* position: relative; */
   
 }
 #rules{
 text-align:justify;
+}
+#questions-left{
+  margin-top:11pt;
+  margin-left: 2pt;
+}
+
+@media only screen and (max-width: 500px) {
+  .btn {
+    background-color: rgb(0, 0, 0);
+    text-shadow: 2px, 2px, 3px rgb(0,0,0);
+ margin-left: 15%;
+ padding:4%;
+ 
+ text-align: center;
+ border-radius: .5em;
+
+  }
+}
+@media only screen and (max-width: 500px) {
+  .my-name {
+background-image: linear-gradient(90deg, rgba(255, 255, 255, .0000005), rgba(255, 255, 255, .0003), rgba(255, 255, 255, .2),
+    rgba(255, 255, 255, 0.0010), rgba(255, 255, 255, .05),rgba(255, 255, 255, .05), rgba(255, 255, 255, .1));
+ margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #start,
+  #start:hover
+  #start:Active {
+    
+ margin-left: -10%;
+ background-size: 60%;
+ position: relative;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #down {
+margin-top:  -8%;
+ margin-left: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #score-up {
+margin-left:  -238%;
+ margin-left: 80%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #timer {
+font-size-adjust: -10px;
+  }
 }
