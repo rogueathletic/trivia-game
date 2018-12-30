@@ -6,12 +6,14 @@ $(document).ready(function () {
     $('#ans3').parent().hide()
     $('#ans4').parent().hide()
     $('#quiz').hide()
-    $('#score-up').hide()
+    $('#up').hide()
     $('#down').hide()
+    $('#wr').hide()
+    $('#ql').hide()
+    $('.my-4').hide()
+    $('#score-up').hide()
 
 });
-
-
 
 var queryURL = "https://opentdb.com/api.php?amount=1&type=multiple";
 
@@ -62,10 +64,9 @@ $.ajax({
 
 /* ---------> timer begin <---------- */
     function timer() {     /* --->  <--- */
-        if (count <= 0) {     /* --->  <--- */
-            clearInterval(counter);     /* --->  <--- */
-            return;     /* --->  <--- */
-        }
+        if (--count < 0) {
+                    stopTimer();
+                }
         
 
         var current = Date.now()     /* --->  <--- */
@@ -77,8 +78,7 @@ $.ajax({
 
     function displayCount(count) {     /* --->  <--- */
         var res = count / 1000;     /* --->  <--- */
-        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length - (3 -
-            decimals));
+        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length - (1 -decimals));
 
     }
     /* ---------> on click funcitions begin <---------- */
@@ -89,53 +89,70 @@ $.ajax({
         $('#ans3').parent().fadeIn(1400)     /* ---> brings in answer 3 <--- */
         $('#ans4').parent().fadeIn(1600)     /* ---> brings in answer 4 <--- */
         $('#quiz').fadeIn(1800)     /* ---> brings in the question to be answered <--- */
-        $('#score-up').fadeIn(1000)     /* ---> brings in the score counter <--- */
-        $('#down').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
-
+        $('#ql').fadeIn(1000)     /* ---> brings in the questions left counter <--- */
+        $('.my-4').fadeIn(31500)
         initialMillis = Date.now();     /* ---> allows for milli seconds to be added to time for effect  <--- */
-        counter = setInterval(timer, counter)     /* --->  <--- */
+        counter = setInterval(timer, counter) 
+        
     });
 
 
 /* ---------> correct answer <---------- */
     $('#ans1').parent().on('click', function () {
-        var number = parseInt($('#score-up').text());
+      
+      $('#jumbotron').fadeOut(1000).fadeIn(1000);
+      $("#quiz").append(questionDiv).fadeIn(3000);
+      $("<p>").html(ourQuestions[0].question)
+        $('#score-up').fadeIn(1000)  
+        $('#up').text("Correct: ");
+        $('#up').fadeIn(1000) 
+      var number = parseInt($('#score-up').text());
         number += 1;
         $('#score-up').text(number);
-
         var number = parseInt($('#questions-left').text());
         number -= 1;
         $('#questions-left').text(number);
+        queryURL('update');
+        forceUpdate()
+
 
     });
 
     /* ---------> incorrect answer <---------- */
     $('#ans2').parent().on('click', function () {
         var number = parseInt($('#down').text());
-        number -= 1;
-        $('#down').text(number);
+        number += 1;
+        $('#down').text(number).fadeIn(3000);
+        $('#wr').text("Wrong: ");
         $("#ans2").parent().fadeOut(900)
-        $('.wrongAnswers').text(number);
+        $('#wr').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
+        $('#down').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
+        
+
     });
 
 
     /* ---------> incorrect answer <---------- */
     $('#ans3').parent().on('click', function () {
         var number = parseInt($('#down').text());
-        number -= 1;
-        $('#down').text(number);
+        number += 1;
+        $('#down').text(number).fadeIn(3000);
+        $('#wr').text("Wrong: ");
         $('#ans3').parent().fadeOut(900)
-
+        $('#wr').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
+        $('#down').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
     });
 
 
     /* ---------> incorrect answer <---------- */
     $('#ans4').parent().on('click', function () {
         var number = parseInt($('#down').text());
-        number -= 1;
-        $('#down').text(number);
+        number += 1;
+        $('#down').text(number).fadeIn(3000);
+        $('#wr').text("Wrong: ");
         $('#ans4').parent().fadeOut(900)
-
+        $('#wr').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
+        $('#down').fadeIn(1000)     /* ---> brings in the wrong answers counter <--- */
     });
 
     /* ---> allows for random order of answers <--- */
@@ -152,4 +169,29 @@ for (i = 0; i < choices.length; ++i) {
 };
 for (i = 0; i < choices.length; ++i) {
     choices[i].style.width = minWidth + "px";
+
+    $(".bd").click(function () {
+      if ($("#execute").hasClass("active")) {
+          $(".promoOut").slideDown("slow", function () {
+              $(".promoOut").show();
+              $(".promoOut").removeClass("active");
+          });
+      } else {
+          $(".promoOut").slideUp("slow", function () {
+              $(".promoOut").hide();
+             
+              $(".promoOut").addClass("active");
+          });
+      }
+      function toggleDisplay(d,b){
+          var c=document.getElementById(d);
+          if(c.style.display=="block"){
+              c.style.display="none";
+              if(b){b.innerHTML="Read more..."}}
+              else{c.style.display="block";
+              if(b){b.innerHTML="Fold in..."}}};
+  });
+
 };
+
+  
