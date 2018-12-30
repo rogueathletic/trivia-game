@@ -1,17 +1,22 @@
 #body{
-  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/libraryhuge.jpg?raw=true");
+  background-image: url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
   width: auto;
   height: auto;
-  position:;
+  margin-top: 0%;
+  position:sticky;
+  background-repeat: repeat;
+  background-position: top;
+ 
 }
 
 #jumbotron {
-  width: 80%;
-  height: initial;
+  width: 60%;
+  height: 70%;
   border-radius: 20px;
   margin: auto;
   position: relative;
-  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/game-pattern.png?raw=true"), radial-gradient(white, darkgrey, black);
+  background-color: transparent;
+  background-image: radial-gradient(rgba(255,255,255,.4), rgba(150,150,150,.4), rgba(0,0,0,.4));
   background-size: 100%;
   -webkit-box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
 -moz-box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.20);
@@ -51,12 +56,12 @@ box-shadow: 20px 20px 57px 9px rgba(0,0,0,0.2);
 .btn {
   border-radius: 1em;;
   margin-right: 20%;
-  margin-left:18%;
-  margin-top:-1em;
-  margin-bottom: 3em;
-  font-size:20px;
-  min-width: 400px;
-  float:right;
+  margin-left:14%;
+  margin-top:1em;
+  /* margin-bottom: 1em; */
+  min-width: 70%;
+  width: auto;
+  /* float:right; */
 height: auto;
   background-image: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .2), rgba(255, 255, 255, .4),
   rgba(255, 255, 255, 0.548), rgba(255, 255, 255, .4),rgba(255, 255, 255, .2), rgba(255, 255, 255, .1));
@@ -74,37 +79,38 @@ height: auto;
   rgba(255, 255, 255, .5), rgba(255, 255, 255, .4),rgba(255, 255, 255, .2), rgba(255, 255, 255, .002));
   width: auto;
   margin: 1em;
-  padding-top: 1em;
+  
   color: black;
-  padding-bottom: .5em;
+  
   text-align: center;
   left: auto;
   font-size: 32px;
   text-shadow: 3 px 3px 3px rgba(255, 255, 255, 1);
 }
 #start{
-  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start-off.png?raw=true");
+  background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
   background-size: contain;
   height: 150px;
   width: 150px;
   display:flex;
   justify-content:space-around;
-  margin-left: 40%;
+  margin-left: 44%;
   margin-bottom: 4%;
 }
 #start:hover{
-  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start-hover.png?raw=true");
+  background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
 
 
 }
 #start:active{
-  background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/start.png?raw=true");
+  background-image: url("https://i.postimg.cc/x8sVZ9T7/start.png");
 
 }
-#score-up{
+#score-up,
+#up{
   color:yellowgreen;
   /* float:right; */
-  text-shadow: 0 0 10px rgb(0,0,0,1);
+  text-shadow: 0 0 10px rgb(0,0,0);
   
 }
 #timer{
@@ -112,23 +118,25 @@ height: auto;
   font-size:50pt;
   text-shadow: 4px 4px 5px rgb(0, 0, 0);
 }
-#down{
+#down,
+#wr{
   color:red;
   /* float:left; */
-  text-shadow: 0 0 10px rgb(0,0,0,1);
+  text-shadow: 0 0 10px rgb(0,0,0);
+  text-align: right;
 
 }
 .dropdown{
 color: #06d406;
 font-size: 12pt;
 text-align: right;
-text-shadow: 0 0 10px rgb(0,0,0,.6);
+text-shadow: 0 0 10px rgba(0,0,0,.6);
 
 }
 @media only screen and (max-width: 500px) {
   .btn {
     background-color: rgb(0, 0, 0);
-    background-image: url("https://github.com/rogueathletic/trivia-game/blob/master/assets/game-pattern.png?raw=true");
+    text-shadow: 2px, 2px, 3px rgb(0,0,0);
  margin-left: 10%;
  padding:2%;
  margin-top: 0%;
@@ -175,7 +183,7 @@ margin-top:220%;
   display: inline-block;
   color: #06d406;
   font-size: 12pt;
-  text-shadow: 4px 4px 3px rgb(0,0,0,.8);
+  text-shadow: 4px 4px 3px rgba(0,0,0,.8);
 }
 
 .dropdown-content {
@@ -183,7 +191,6 @@ margin-top:220%;
   position: absolute;
   background-color:transparent;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
 }
@@ -194,4 +201,25 @@ margin-top:220%;
 
 #personal-link{
   color: #66cccc;
+  /* #80ff80; */
+}
+#container {
+  display: flex;
+  justify-content: space-between; /* Can be changed in the live sample */
+}
+
+#container > div {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(-45deg, #788cff, #b4c8ff);
+}
+#ql{
+  color: darkslategrey;
+  float:right;
+  text-align: center;
+  position: relative;
+  
+}
+#rules{
+text-align:justify;
 }
