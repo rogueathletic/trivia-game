@@ -32,7 +32,7 @@ $.ajax({
 
     console.log(ourQuestions[0].question);
 
-
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX interactive background begin XXXXXXXXXXXXXXXXXXXX */
     function epicBackground(count) {     
 
 
@@ -84,7 +84,7 @@ $.ajax({
               r.y += r.ya, // mobile
               r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1, 
               r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, // Hit the border, reverse rebound
-              context.fillRect(r.x - 0.5, r.y - 0.5, 0, 0); // Draw a point with a width of 1
+              context.fillRect(r.x - 0.5, r.y - 0.9, 0, 0); // Draw a point with a width of .72
               // Starting from the next point
               for (i = idx + 1; i < all_array.length; i++) {
                 e = all_array[i];
@@ -163,6 +163,7 @@ $.ajax({
         }();
         
     }
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXX interactive background END XXXXXXXXXXXXXXXXXXXX */
 
     var questionDiv = $("<div>");
     console.log('questionDiv', questionDiv);
@@ -300,7 +301,7 @@ for (i = 0; i < choices.length; ++i) {
     maxWidth = Math.max(maxWidth, choices[i].offsetWidth)
 };
 for (i = 0; i < choices.length; ++i) {
-    choices[i].style.width = minWidth + "px";
+    choices[i].style.width = minWidth ;
 
     $(".bd").click(function () {
       if ($("#execute").hasClass("active")) {
