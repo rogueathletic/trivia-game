@@ -1,14 +1,14 @@
-#body{
+#body {
   background-image: url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
   background-size: cover;
-  width:100%;
+  width: 100%;
   height: auto;
   margin-top: 0%;
   /* position:relative; */
   background-repeat: repeat;
   background-position: top;
 
- 
+
 }
 
 .box {
@@ -21,7 +21,7 @@
   width: 100px;
   height: 100px;
 }
-  
+
 .box1 {
   display: flex;
   align-items: center;
@@ -34,13 +34,14 @@
 }
 
 /* header begin */
-#header{
-  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62,.0) );
+#header {
+  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62, .0));
   width: 100%;
   height: auto;
   position: fixed;
 
 }
+
 #header {
   display: inline-block;
   float: none;
@@ -60,7 +61,7 @@
 .dropup {
   position: relative;
   display: inline-block;
-  
+
 }
 
 .dropup-content {
@@ -68,20 +69,20 @@
   /* position: absolute; */
   bottom: 50px;
   z-index: 1;
-  Text-align:center;
-  margin-top:1em;
+  Text-align: center;
+  margin-top: 1em;
 }
 
 .dropup-content a {
   color: white;
-font-size: 20px;
+  font-size: 20px;
   text-decoration: none;
   display: block;
 
 }
 
 .dropup-content a:hover {
-  background-image: linear-gradient(90deg,rgba(51, 70, 62,.000001), rgba(51, 70, 62,.1), rgba(51, 70, 62,.000001) );
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .000001), rgba(51, 70, 62, .1), rgba(51, 70, 62, .000001));
 
 }
 
@@ -91,10 +92,11 @@ font-size: 20px;
 }
 
 .dropup:hover .dropbtn {
-  background-color:transparent;
+  background-color: transparent;
 }
-#footer{
-  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62) );
+
+#footer {
+  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
   margin-top: 10%;
 }
 
@@ -105,17 +107,17 @@ font-size: 20px;
 
 #jumbotron {
   width: 90%;
-  height:90%;
+  height: 90%;
   border-radius: 20px;
   margin: auto;
   margin-top: 15%;
   position: relative;
   background-color: transparent;
-  background-image: radial-gradient(rgba(51, 70, 62,.4), rgba(51, 70, 62,.4), rgba(51, 70, 62,.4));
+  background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
   background-size: 100%;
   -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
--moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62,.2);
-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62,.2);
+  -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
 }
 
 #jumbotron:before,
@@ -141,25 +143,27 @@ box-shadow: 20px 20px 57px 9px rgba(51, 70, 62,.2);
 
 
 .btn {
-  border-radius: 1em;;
-  margin-top:1em;
-  margin-left:-5%;
+  border-radius: 1em;
+  ;
+  margin-top: 1em;
+  margin-left: -5%;
   min-width: 70%;
   width: 90%;
   height: auto;
   background-image: linear-gradient(90deg, rgba(51, 70, 62, .1), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
-  rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4),rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
+    rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
   background-size: 40%;
   padding-top: 1em;
   box-shadow: 5px 10px 18px #000000;
-  text-align:center;
+  text-align: center;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
 }
+
 #quiz {
-    background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
-  rgba(51, 70, 62, .5), rgba(51, 70, 62, .4),rgba(51, 70, 62, .2), rgba(51, 70, 62, .002));
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
+    rgba(51, 70, 62, .5), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .002));
   width: auto;
   margin: 1em;
   color: white;
@@ -168,107 +172,120 @@ box-shadow: 20px 20px 57px 9px rgba(51, 70, 62,.2);
   font-size: 32px;
   text-shadow: 3px 3px 3px rgb(51, 70, 62);
 }
-#start{
+
+#start {
   background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
   background-size: 100%;
   background-repeat: no-repeat;
   height: 150px;
   width: 150px;
-  display:flex;
-  justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
   /* margin-left: 44%;
   margin-right: 44%;
   margin-bottom: 4%; */
 }
-#start:hover{
+
+#start:hover {
   background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
 
 
 }
-#start:active{
+
+#start:active {
   background-image: url("https://i.postimg.cc/x8sVZ9T7/start.png");
 
 }
+
 #score-up,
-#up{
-  color:yellowgreen;
-text-align: left;
+#up {
+  color: yellowgreen;
+  text-align: left;
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
-  
+
 }
-#timer{
+
+#timer {
   color: white;
-  font-size:30pt;
+  font-size: 30pt;
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
   float: right;
   justify-content: right;
 
 }
+
 #down,
-#wr{
-  color:red;
+#wr {
+  color: red;
   /* float:left; */
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
   text-align: right;
 
 }
-.dropup{
-color: #06d406;
-text-align: right;
 
-position: relative;
-display: inline-block;
-font-size: 12pt;
+.dropup {
+  color: #06d406;
+  text-align: right;
+
+  position: relative;
+  display: inline-block;
+  font-size: 12pt;
 }
 
 
 .dropup-content {
   display: none;
   position: absolute;
-  background-color:transparent;
+  background-color: transparent;
   min-width: 160px;
   padding: 12px 16px;
   z-index: 1;
-  
+
 }
 
 .dropup:hover .dropup-content {
   display: block;
 }
 
-#personal-link{
+#personal-link {
   color: rgba(72, 102, 89, 0.61);
 
   /* #80ff80; */
 }
-#personal-link:hover{
+
+#personal-link:hover {
   color: rgba(211, 219, 216, 0.815);
-  text-shadow: 0 0 4px rgba(51, 70, 62,1);
+  text-shadow: 0 0 4px rgba(51, 70, 62, 1);
   /* #80ff80; */
 }
+
 #container {
   display: flex;
-  justify-content: space-between; /* Can be changed in the live sample */
+  justify-content: space-between;
+  /* Can be changed in the live sample */
 }
 
-#container > div {
+#container>div {
   width: 100px;
   height: 100px;
   background: linear-gradient(-45deg, #788cff, #b4c8ff);
 }
-#ql{
+
+#ql {
   color: darkslategrey;
-  Float:center;
+  Float: center;
   /* float:right; */
   text-align: center;
   /* position: relative; */
-  
+
 }
-#rules{
-text-align:justify;
+
+#rules {
+  text-align: justify;
 }
-#questions-left{
-  margin-top:11pt;
+
+#questions-left {
+  margin-top: 11pt;
   margin-left: 2pt;
 }
 
@@ -276,87 +293,95 @@ text-align:justify;
   .btn {
     background-color: rgb(0, 0, 0);
     text-shadow: 2px, 2px, 3px rgb(51, 70, 62);
-    padding-top:5%;
+    padding-top: 5%;
     width: 100%;
     border-radius: .5em;
     margin-top: 10px;
-    margin-left:-20%;
-    
-    
+    margin-left: -20%;
+
+
 
   }
 }
+
 @media only screen and (max-width: 500px) {
   .my-name {
-background-image: linear-gradient(90deg, rgba(51, 70, 62, .0000005), rgba(51, 70, 62, .0003), rgba(51, 70, 62, .2),
-    rgba(51, 70, 62, 0.0010), rgba(51, 70, 62, .05),rgba(51, 70, 62, .05), rgba(51, 70, 62, .1));
- margin-left: 10%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #start,
-  #start:hover
-  #start:Active {
-    
- margin-left: -10%;
- background-size: 60%;
- position: relative;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #down {
-margin-top:  0%;
- margin-left: 80%;
- font-size: 16px;;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #score-up {
-margin-left:  -238%;
- margin-left: 80%;
-  }
-}
-@media only screen and (max-width: 500px) {
-  #timer {
-font-size: 22px;
+    background-image: linear-gradient(90deg, rgba(51, 70, 62, .0000005), rgba(51, 70, 62, .0003), rgba(51, 70, 62, .2),
+      rgba(51, 70, 62, 0.0010), rgba(51, 70, 62, .05), rgba(51, 70, 62, .05), rgba(51, 70, 62, .1));
+    margin-left: 10%;
   }
 }
 
 @media only screen and (max-width: 500px) {
+
+  #start,
+  #start:hover #start:Active {
+
+    margin-left: -10%;
+    background-size: 60%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #down {
+    margin-top: 0%;
+    margin-left: 80%;
+    font-size: 16px;
+    ;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #score-up {
+    margin-left: -238%;
+    margin-left: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #timer {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
   #wr,
   #up,
   #score-up {
-font-size: 16px;
+    font-size: 16px;
   }
 }
+
 @media only screen and (max-width: 500px) {
   #quiz {
-font-size: 1em;
+    font-size: 1em;
 
   }
 }
+
 @media only screen and (max-width: 500px) {
   #up {
-text-align: left;
+    text-align: left;
 
   }
 }
 
 @media (min-width: 768px) {
   #header {
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-      text-align: center;
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    text-align: center;
   }
 }
+
 @media (min-width: 768px) {
   #start {
     align-content: center;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     vertical-align: middle;
   }
 }
-
-
