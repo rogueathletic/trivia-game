@@ -9,49 +9,47 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
-    <!-- <meta name="description" content=""> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href=""> -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Trivia Game | Jason Schutz</title>
-</head>
-</div>
-
-<body id="body">
-    <br>
-    <div class="jumbotron vertical-center" id="jumbotron">
+    <nav class="navbar navbar-nav navbar" style="background-color: transparent;" id="header">
         <div class="container">
-
-            <div class="row">
-                <div class="col-sm">
+            <div class="row align-items-start">
+                <div class="col">
                     <div id="up"></div>
                     <h1>
+                        <!-- until correct answer propogates from clicking the correct button the timer is not centered -->
                         <div id="score-up">0</div>
                     </h1>
                 </div>
-                <div class="col-sm">
-                    <div id="wr"></div>
-                    <h1>
-                        <div id="down">0</div>
-                    </h1>
+            </div>
+            <div class="col">
+                <div class="timer">
+                    <span id="timer"></span>
                 </div>
             </div>
+            <div class="col">
+                <div id="wr"></div>
+                <h1>
+                    <div id="down">0</div>
+                </h1>
+            </div>
         </div>
-        <p class="lead">
-            <div class="questions" id="quiz"></div>
-        </p>
-        <div class="col-sm" style="position:relative">
-            <h3 class="display-4" style="text-align:center;" ;><span id="timer"></span></h3>
         </div>
-        <!-- <hr class="my-4"> -->
-
+    </nav>
+</head>
+<!-- body begin -->
+<body id="body">
+    <br>
+    <div class="jumbotron vertical-center" id="jumbotron">
+        <div class="quiz" id="quiz"></div>
         <div class="col box">
-            <div  id="start" ></div>
+            <div id="start"></div>
         </div>
-        <!-- question button start -->
+<!-- question button start -->
 
-        <ul id="ul">
+        <ul id="options">
             <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-correct-answer">
                     <p id="ans1"></p>
                 </button></div>
@@ -65,34 +63,30 @@
                     <p id="ans4"></p>
                 </button></div>
         </ul>
-        <!-- question content end -->
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    &nbsp;
-                </div>
-                <div class="col-md">
-                    <div class="dropdown box">
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;© 2018 | Jason Schutz</span>
-                        <div class="dropdown-content">
-                            <p><a id="personal-link" href="mailto: jason@rogueathletic.com" taerget="_blank" alt="Jason Schutz Email Link">Email</a>
-                                | <a id="personal-link" href="sms:1-714-916-8783">Text</a> | <a id="personal-link" href="tel:1-714-916-8783">Call</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="box" id="ql">Questions Left <p id="questions-left">10</p>
-                    </div>
-                </div>
+<!-- question content end -->
+<!-- notification of how manu questions are left start -->
+        <div class="col-sm">
+            <div class="box" id="ql">Questions Left <p id="questions-left">10</p>
             </div>
-        </div>
+<!-- notification of how manu questions are left end -->
 
-        
-    <script type="text/javascript" src="./assets/javascript/app.js">
+            <script type="text/javascript" src="./assets/javascript/app.js">
+// link to javascript file presents here
+            </script>
+<!-- Footer Begin -->
+            <nav class="navbar navbar-nav navbar fixed-bottom " style="background-color: transparent;" id="footer">
+                <div class="dropup">
+<!-- interactive copyright button provides personal contact info start -->
+                    <div class="dropbtn">© 2018 | Jason Schutz</div>
+                    <div class="dropup-content">
 
-        </script>
+                        <a id="personal-link" href="mailto: jason@rogueathletic.com" taerget="_blank" alt="Jason Schutz Email Link">Email</a>
+                        <a id="personal-link" href="sms:1-714-916-8783">Text</a>
+                        <a id="personal-link" href="tel:1-714-916-8783">Call</a>
+<!-- interactive copyright button provides personal contact info end -->
+                    </div>
+                </div>
+            </nav>
 </body>
 
 </html>
