@@ -1,4 +1,4 @@
-=$(document).ready(function () {
+$(document).ready(function () {
     console.log("ready!");
     /* ----------------> below is how the  game is formatted on load <------------------ */
     $('#ans1').parent().hide()
