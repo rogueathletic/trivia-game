@@ -19,12 +19,12 @@ $( document ).ready         ( function () {
 var         queryURL = "https://opentdb.com/api.php?amount=10&type=multiple";
 console.log( 'queryURL', queryURL );
 
-// gets the api call for me
+                                // gets the api call for me
 $       .ajax({
             url: queryURL,
             method: "GET"
 
-    // then it does this
+                               // then it does this
 }).then(function (response) {
 let         res = response.results;
 let         yep = correct_answer;
@@ -100,15 +100,15 @@ var wrongAnswer3 = [
     $       ("#quiz").append(questionDiv);
 
 });
-/* Timeing Variables */
+                                /* Timeing Variables */
     var     initial = 10000;
     var     count = initial;
-    var     counter = 10; //10 will  run it every 100th of a second
+    var     counter = 10;      //10 will  run it every 100th of a second
     var     initialMillis;
     var     decimals = 2;
     var     gameOver = 0;
-/* timing variables end */
-//this variable tells the below nextElement function to only move one comma at a time on command
+                               /* timing variables end */
+                                //this variable tells the below nextElement function to only move one comma at a time on command
     var     index =
             answer = 1
             answer1 = 1
@@ -117,7 +117,7 @@ var wrongAnswer3 = [
             answer4 = 1
 
         
-// this is how the questions load to the game on start
+                                // this is how the questions load to the game on start
 
 
     var     questionList  = document.getElementById  ( 'quiz'                       );
@@ -152,36 +152,36 @@ $           ( "#ans2" ) .append ( wrongAnswer1                                  
 $           ( "#ans3" ) .append ( wrongAnswer2                                      );
 $           ( "#ans4" ) .append ( wrongAnswer3                                      );
 /* ---------> timer begin <---------- */
-function                timer   (                                                   ) { /* --->  <--- */
+function                timer   (                                                   ) { 
     if (                --count < 0                                                 ) {
                         stopTimer               (                                   );
     }
-    var                 current = Date.now      (                                   ) /* --->  <--- */
-    count = count -    ( current - initialMillis                                    ); /* --->  <--- */
-    initialMillis = current; /* --->  <--- */
-    displayCount       ( count                                                      ); /* --->  <--- */
-    console.log        ( 'displayCount', displayCount                               ); /* --->  <--- */
+    var                 current = Date.now      (                                   )
+    count = count -    ( current - initialMillis                                    );
+    initialMillis = current;
+    displayCount       ( count                                                      );
+    console.log        ( 'displayCount', displayCount                               ); 
 }
-function displayCount  ( count                                                      ){ /* ---> sends the timer to the screen <--- */
+function displayCount  ( count                                                      ){                  /* ---> sends the timer to the screen <--- */
     var 
     res = count / 1000; /* ---> the timing ofr each interval of time change <--- */
     document.getElementById         ( "timer"                                       ) 
     .innerHTML = res.toPrecision    ( count.toString () . length - (4 - decimals )  );
 }
 /* ---------> on click funcitions begin <---------- */
-$( '#start' ) .on ( 'click', function   (                                           ){ /* ---> action to start game <--- */
-    $       ( this    ) .parent () .hide   (                                        ) /* ---> hides the start button <--- */
-    $       ( '#ans1' ).parent  () .fadeIn ( 1000                                   ) /* ---> brings in answer 1 <--- */
-    $       ( '#ans2' ).parent  () .fadeIn ( 1200                                   ) /* ---> brings in answer 2 <--- */
-    $       ( '#ans3' ).parent  () .fadeIn ( 1400                                   ) /* ---> brings in answer 3 <--- */
-    $       ( '#ans4' ).parent  () .fadeIn ( 1600                                   ) /* ---> brings in answer 4 <--- */
-    $       ( '#quiz' ).fadeIn  (            1800                                   ) /* ---> brings in the question to be answered <--- */
-    $       ( '#ql'   ).fadeIn  (            1000                                   ) /* ---> brings in the questions left counter <--- */
+$( '#start' ) .on ( 'click', function   (                                           ){                      /* ---> action to start game <--- */
+    $       ( this    ) .parent () .hide   (                                        )                   /* ---> hides the start button <--- */
+    $       ( '#ans1' ).parent  () .fadeIn ( 1000                                   )                   /* ---> brings in answer 1 <--- */
+    $       ( '#ans2' ).parent  () .fadeIn ( 1200                                   )                   /* ---> brings in answer 2 <--- */
+    $       ( '#ans3' ).parent  () .fadeIn ( 1400                                   )                   /* ---> brings in answer 3 <--- */
+    $       ( '#ans4' ).parent  () .fadeIn ( 1600                                   )                   /* ---> brings in answer 4 <--- */
+    $       ( '#quiz' ).fadeIn  (            1800                                   )                   /* ---> brings in the question to be answered <--- */
+    $       ( '#ql'   ).fadeIn  (            1000                                   )                   /* ---> brings in the questions left counter <--- */
     initialMillis = Date.now    (                                                   );
     counter = setInterval       ( timer, counter                                    )
     $       ( 'body' ) .html ( epicBackground     ) .fadeIn ( 1800                  )
 });
-/* ---------> correct answer <---------- */
+            /* ---------> correct answer <---------- */
 $ ( '#ans1' ) .parent () .on ( 'click', function () {
 
     $       ( '#jumbotron'      ) .fadeOut ( 1000 ) .fadeIn ( 1000                  );
@@ -195,47 +195,47 @@ $ ( '#ans1' ) .parent () .on ( 'click', function () {
             number -= 1;
     $       ( '#questions-left' ) .text ( number );
 });
-/* ---------> incorrect answer <---------- */
+            /* ---------> incorrect answer <---------- */
 $( '#ans2' )           .parent  () .on ( 'click', function ()                        {
     var     number  =  parseInt ( $    ( '#down' ) .text   ()                       );
             number +=  1;
     $(      '#down'  ) .text           (  number ) .fadeIn ( 3000                   );
     $(      '#wr'    ) .text           (  "Wrong: "                                 );
     $(      "#ans2"  ) .parent         () .fadeOut (         900                    )
-    $(      '#wr'    ) .fadeIn         ( 1000 ) /* ---> brings in the wrong answers counter <--- */
-    $(      '#down'  ) .fadeIn         ( 1000 ) /* ---> brings in the wrong answers counter <--- */
+    $(      '#wr'    ) .fadeIn         ( 1000 )                                                         /* ---> brings in the wrong answers counter <--- */
+    $(      '#down'  ) .fadeIn         ( 1000 )                                                         /* ---> brings in the wrong answers counter <--- */
 });
-/* ---------> incorrect answer <---------- */
+            /* ---------> incorrect answer <---------- */
 $ ( '#ans3' ) .parent () .on ( 'click' , function ()                                {
-    var number = parseInt ( $ ( '#down' ) .text ()                                  );
-        number += 1;
-    $( '#down' ) .text   (  number ) .fadeIn ( 3000                                 );
-    $( '#wr'   ) .text   (  "Wrong: "                                               );
-    $( '#ans3' ) .parent () .fadeOut          ( 900                                 )  
-    $( '#wr'   ) .fadeIn (                      1000                                ) /* ---> brings in the wrong answers counter <--- */
-    $( '#down' ) .fadeIn (                      1000                                ) /* ---> brings in the wrong answers counter <--- */
+    var     number = parseInt ( $ ( '#down' ) .text ()                              );
+            number += 1;
+    $(      '#down' ) .text   (  number ) .fadeIn (  3000                           );
+    $(      '#wr'   ) .text   (  "Wrong: "                                          );
+    $(      '#ans3' ) .parent () .fadeOut          ( 900                            )  
+    $(      '#wr'   ) .fadeIn (                      1000                           )                   /* ---> brings in the wrong answers counter <--- */
+    $(      '#down' ) .fadeIn (                      1000                           )                   /* ---> brings in the wrong answers counter <--- */
 });
-/* ---------> incorrect answer <---------- */
+            /* ---------> incorrect answer <---------- */
 $( '#ans4'     ) .parent () .on ( 'click', function ()                              {
     var           number = parseInt ( $ ( '#down' ) .text ()                        );
                   number += 1;
-    $( '#down' ) .text   ( number     ) .fadeIn ( 3000 );
-    $( '#wr'   ) .text   ( "Wrong: "                   );
-    $( '#ans4' ) .parent () .fadeOut (             900 )
-    $( '#wr'   ) .fadeIn (                        1000 ) /* ---> brings in the wrong answers counter <--- */
-    $( '#down' ) .fadeIn ( 1000                        ) /* ---> brings in the wrong answers counter <--- */
+    $(       '#down' ) .text   ( number     ) .fadeIn ( 3000                        );
+    $(       '#wr'   ) .text   ( "Wrong: "                                          );
+    $(       '#ans4' ) .parent () .fadeOut (             900                        )
+    $(       '#wr'   ) .fadeIn (                        1000                        )                     /* ---> brings in the wrong answers counter <--- */
+    $(       '#down' ) .fadeIn ( 1000                                               )                     /* ---> brings in the wrong answers counter <--- */
 });
-/* ---> allows for random order of answers <--- */
-var options = document.querySelector ( '#options'                                  );
-for ( var i = options.children.length ; i >= 0; i++                                ){
-    options.appendChild ( options.children [ Math.random () * i | 0 ]              );
-}
-/* ---> balances width of the buttons <--- */
-var choices = document.querySelectorAll ( '.btn'                                   );
-var maxWidth = 0;
-for ( i = 0; i < choices.length; ++i                                               ){
-    maxWidth = Math.max ( maxWidth ,  choices [ i ] .offsetWidth                   )
-};
-for ( i = 0; i < choices.length; ++i                                               ){
-    choices [ i ] .style.width = minWidth;
-};
+             /* ---> allows for random order of answers <--- */
+var           options = document.querySelector ( '#options'                         );
+for (         var i = options.children.length ; i >= 0; i++                         ){
+              options.appendChild ( options.children [ Math.random () * i | 0 ]     );
+                                                                                    }
+             /* ---> balances width of the buttons <--- */
+var          choices = document.querySelectorAll ( '.btn'                           );
+var          maxWidth = 0;
+for (        i = 0; i < choices.length; ++i                                         ){
+             maxWidth = Math.max ( maxWidth ,  choices [ i ] .offsetWidth           )
+                                                                                    };
+for (        i = 0; i < choices.length; ++i                                         ){
+             choices [ i ] .style.width = minWidth;
+                                                                                    };
