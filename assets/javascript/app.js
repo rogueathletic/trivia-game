@@ -1,4 +1,4 @@
-$(document).ready(function () {
+=$(document).ready(function () {
     console.log("ready!");
     /* ----------------> below is how the  game is formatted on load <------------------ */
     $('#ans1').parent().hide()
@@ -25,74 +25,153 @@ $.ajax({
     method: "GET"
 
     // then it does this
-}).then(function (response) {
-    let res = response.results;
-    let yep = correct_answer;
+}).then(function () {
+
 
     var questionList = [
-        [res[0]]
-        [res[1]]
-        [res[2]]
-        [res[3]]
-        [res[4]]
-        [res[5]]
-        [res[6]]
-        [res[7]]
-        [res[8]]
-        [res[9]]
+        console.log('questionList', questionList)
+        (response.results[0].question)
+        (response.results[1].question)
+        (response.results[2].question)
+        (response.results[3].question)
+        (response.results[4].question)
+        (response.results[5].question)
+        (response.results[6].question)
+        (response.results[7].question)
+        (response.results[8].question)
+        (response.results[9].question)
     ]
     var theGoodAnswer = [
-        [res[0].yep]
-        [res[1].yep]
-        [res[2].yep]
-        [res[3].yep]
-        [res[4].yep]
-        [res[5].yep]
-        [res[6].yep]
-        [res[7].yep]
-        [res[8].yep]
-        [res[9].yep]
+        console.log('theGoodAnswer', theGoodAnswer)
+        (response.results[0].correct_answer)
+        (response.results[1].correct_answer)
+        (response.results[2].correct_answer)
+        (response.results[3].correct_answer)
+        (response.results[4].correct_answer)
+        (response.results[5].correct_answer)
+        (response.results[6].correct_answer)
+        (response.results[7].correct_answer)
+        (response.results[8].correct_answer)
+        (response.results[9].correct_answer)
     ]
-
+    
     var wrongAnswer1 = [
-        [res[0].nope[0]]
-        [res[1].nope[0]]
-        [res[2].nope[0]]
-        [res[3].nope[0]]
-        [res[4].nope[0]]
-        [res[5].nope[0]]
-        [res[6].nope[0]]
-        [res[7].nope[0]]
-        [res[8].nope[0]]
-        [res[9].nope[0]]
+        console.log('wrongAnswer1', wrongAnswer1)
+        (response.results[0].incorrect_answers[0])
+        (response.results[1].incorrect_answers[0])
+        (response.results[2].incorrect_answers[0])
+        (response.results[3].incorrect_answers[0])
+        (response.results[4].incorrect_answers[0])
+        (response.results[5].incorrect_answers[0])
+        (response.results[6].incorrect_answers[0])
+        (response.results[7].incorrect_answers[0])
+        (response.results[8].incorrect_answers[0])
+        (response.results[9].incorrect_answers[0])
     ]
-
+    
     var wrongAnswer2 = [
-        [res[0].nope[1]]
-        [res[1].nope[1]]
-        [res[2].nope[1]]
-        [res[3].nope[1]]
-        [res[4].nope[1]]
-        [res[5].nope[1]]
-        [res[6].nope[1]]
-        [res[7].nope[1]]
-        [res[8].nope[1]]
-        [res[9].nope[1]]
+        console.log('wrongAnswer2', wrongAnswer2)
+        (response.results[0].incorrect_answers[1])
+        (response.results[1].incorrect_answers[1])
+        (response.results[2].incorrect_answers[1])
+        (response.results[3].incorrect_answers[1])
+        (response.results[4].incorrect_answers[1])
+        (response.results[5].incorrect_answers[1])
+        (response.results[6].incorrect_answers[1])
+        (response.results[7].incorrect_answers[1])
+        (response.results[8].incorrect_answers[1])
+        (response.results[9].incorrect_answers[1])
+    ]
+    
+    var wrongAnswer3 = [
+        console.log('wrongAnswer3', wrongAnswer3)
+        (response.results[0].incorrect_answers[2])
+        (response.results[1].incorrect_answers[2])
+        (response.results[2].incorrect_answers[2])
+        (response.results[3].incorrect_answers[2])
+        (response.results[4].incorrect_answers[2])
+        (response.results[5].incorrect_answers[2])
+        (response.results[6].incorrect_answers[2])
+        (response.results[7].incorrect_answers[2])
+        (response.results[8].incorrect_answers[2])
+        (response.results[9].incorrect_answers[2])
     ]
 
-    var wrongAnswer3 = [
-        [res[0].nope[2]]
-        [res[1].nope[2]]
-        [res[2].nope[2]]
-        [res[3].nope[2]]
-        [res[4].nope[2]]
-        [res[5].nope[2]]
-        [res[6].nope[2]]
-        [res[7].nope[2]]
-        [res[8].nope[2]]
-        [res[9].nope[2]]
-    ]
-    var ourQuestions = res;
+    var questionList = document.getElementById('quiz');
+    var theGoodAnswer = document.getElementById('ans1');
+    var wrongAnswer1 = document.getElementById('ans2');
+    var wrongAnswer2 = document.getElementById('ans3');
+    var wrongAnswer3 = document.getElementById('ans4');
+    
+    // let res = response.results;
+    // let yep = correct_answer;
+
+    // var questionList = [
+    //     [res[0]]
+    //     [res[1]]
+    //     [res[2]]
+    //     [res[3]]
+    //     [res[4]]
+    //     [res[5]]
+    //     [res[6]]
+    //     [res[7]]
+    //     [res[8]]
+    //     [res[9]]
+    // ]
+    // var theGoodAnswer = [
+    //     [res[0].yep]
+    //     [res[1].yep]
+    //     [res[2].yep]
+    //     [res[3].yep]
+    //     [res[4].yep]
+    //     [res[5].yep]
+    //     [res[6].yep]
+    //     [res[7].yep]
+    //     [res[8].yep]
+    //     [res[9].yep]
+    // ]
+
+    // var wrongAnswer1 = [
+    //     [res[0].nope[0]]
+    //     [res[1].nope[0]]
+    //     [res[2].nope[0]]
+    //     [res[3].nope[0]]
+    //     [res[4].nope[0]]
+    //     [res[5].nope[0]]
+    //     [res[6].nope[0]]
+    //     [res[7].nope[0]]
+    //     [res[8].nope[0]]
+    //     [res[9].nope[0]]
+    // ]
+
+    // var wrongAnswer2 = [
+    //     [res[0].nope[1]]
+    //     [res[1].nope[1]]
+    //     [res[2].nope[1]]
+    //     [res[3].nope[1]]
+    //     [res[4].nope[1]]
+    //     [res[5].nope[1]]
+    //     [res[6].nope[1]]
+    //     [res[7].nope[1]]
+    //     [res[8].nope[1]]
+    //     [res[9].nope[1]]
+    // ]
+
+    // var wrongAnswer3 = [
+    //     [res[0].nope[2]]
+    //     [res[1].nope[2]]
+    //     [res[2].nope[2]]
+    //     [res[3].nope[2]]
+    //     [res[4].nope[2]]
+    //     [res[5].nope[2]]
+    //     [res[6].nope[2]]
+    //     [res[7].nope[2]]
+    //     [res[8].nope[2]]
+    //     [res[9].nope[2]]
+    // ]
+
+
+    var ourQuestions = response.results;
     var QuestionsLeft = 10;
     var questionDiv = $("<div>");
     var p = $("<p>").html(ourQuestions[0].question);
@@ -197,10 +276,11 @@ $('#start').on('click', function () { /* ---> action to start game <--- */
     initialMillis = Date.now();
     counter = setInterval(timer, counter)
     $('body').html(epicBackground).fadeIn(1800)
+    
 });
 /* ---------> correct answer <---------- */
 $('#ans1').parent().on('click', function () {
-
+  
     $('#jumbotron').fadeOut(1000).fadeIn(1000);
     $('#score-up').fadeIn(1000)
     $('#up').text("Correct:");
@@ -211,6 +291,8 @@ $('#ans1').parent().on('click', function () {
     var number = parseInt($('#questions-left').text());
     number -= 1;
     $('#questions-left').text(number);
+
+    
 });
 /* ---------> incorrect answer <---------- */
 $('#ans2').parent().on('click', function () {
