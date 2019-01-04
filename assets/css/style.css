@@ -72,7 +72,7 @@
   z-index: 1;
   Text-align: center;
   margin-top: 1em;
-    z-index: -5;
+  z-index: -5;
 }
 
 .dropup-content a {
@@ -91,22 +91,25 @@
 .dropup:hover .dropup-content {
   display: block;
   padding-left: 20pt;
-    z-index: -5;
+  z-index: -5;
 }
 
 .dropup:hover .dropbtn {
   background-color: transparent;
-    z-index: -5;
+  z-index: -5;
 }
 
 #footer {
   background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
   margin-top: 10%;
-    z-index: -55;
+  z-index: -55;
 }
 
 /* footer end */
 
+#contact-me{
+  list-style-type: none;
+}
 
 
 
@@ -116,6 +119,7 @@
   border-radius: 20px;
   margin: auto;
   margin-top: 15%;
+  margin-bottom: 20%;
   position: relative;
   background-color: transparent;
   background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
@@ -278,9 +282,10 @@
 }
 
 #ql {
-  color: darkslategrey;
+  color: white;
+  text-shadow: 1 1 4px rgba(51, 70, 62, 1);
   Float: center;
-
+z-index:999;
   text-align: center;
 
 
