@@ -54,14 +54,17 @@
 .dropbtn {
   background-color: transparent;
   color: white;
-  padding: 16px;
-  font-size: 16px;
+
+  padding: 10px;
+  justify-content: center;
+  font-size: 12px;
   border: none;
   z-index: -5;
 }
 
 .dropup {
   position: relative;
+  text-align: center;
   display: inline-block;
   z-index: -5;
 }
@@ -108,7 +111,7 @@
 
 /* footer end */
 
-#contact-me{
+#contact-me {
   list-style-type: none;
 }
 
@@ -119,15 +122,17 @@
   height: 90%;
   border-radius: 20px;
   margin: auto;
-  margin-top: 15%;
-  margin-bottom: 20%;
-  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  justify-self: center;
   background-color: transparent;
   background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
   background-size: 100%;
   -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
   -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
   box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+
 }
 
 #jumbotron:before,
@@ -161,6 +166,7 @@
   min-width: 70%;
   width: 90%;
   height: auto;
+  background-color: transparent;
   background-image: linear-gradient(90deg, rgba(51, 70, 62, .1), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
     rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
   background-size: 40%;
@@ -171,6 +177,7 @@
   justify-content: center;
   text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
 }
+
 
 #quiz {
   background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
@@ -236,33 +243,11 @@
 
 }
 
-.dropup {
-  color: #06d406;
-  text-align: right;
 
-  position: relative;
-  display: inline-block;
-  font-size: 12pt;
-}
-
-
-.dropup-content {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  min-width: 160px;
-  padding: 12px 16px;
-  z-index: 1;
-
-}
-
-.dropup:hover .dropup-content {
-  display: block;
-}
 
 #personal-link {
   color: rgba(72, 102, 89, 0.61);
-
+  padding: 0%;
 
 }
 
@@ -272,23 +257,13 @@
 
 }
 
-#container {
-  display: flex;
-  justify-content: space-between;
 
-}
-
-#container>div {
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(-45deg, #788cff, #b4c8ff);
-}
 
 #ql {
   color: white;
   text-shadow: 1 1 4px rgba(51, 70, 62, 1);
   Float: center;
-z-index:999;
+  z-index: 999;
   text-align: center;
 
 
@@ -312,6 +287,7 @@ z-index:999;
     border-radius: .5em;
     margin-top: 10px;
     margin-left: -20%;
+    background-color: transparent;
 
 
 
@@ -319,10 +295,13 @@ z-index:999;
 }
 
 @media only screen and (max-width: 500px) {
-  .my-name {
-    background-image: linear-gradient(90deg, rgba(51, 70, 62, .0000005), rgba(51, 70, 62, .0003), rgba(51, 70, 62, .2),
-      rgba(51, 70, 62, 0.0010), rgba(51, 70, 62, .05), rgba(51, 70, 62, .05), rgba(51, 70, 62, .1));
-    margin-left: 10%;
+
+  .dropbtn,
+  #personal-link {
+
+    margin-left: 0%;
+    font-size: 8px;
+
   }
 }
 
@@ -333,7 +312,7 @@ z-index:999;
   #start:Active {
 
     margin-top: 20%;
-    margin-left: 19%;
+    margin-left: 18%;
     background-size: 60%;
     position: relative;
     align-content: center;
@@ -373,14 +352,16 @@ z-index:999;
     font-size: 16px;
   }
 }
+
 @media only screen and (max-width: 500px) {
 
- 
+
 
   #score-up {
     text-align: left;
   }
 }
+
 @media only screen and (max-width: 500px) {
   #quiz {
     font-size: 1em;
