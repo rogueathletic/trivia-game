@@ -1,105 +1,386 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <title>Trivia Game | Jason Schutz</title>
-    <nav class="navbar navbar-nav navbar" style="background-color: transparent;" id="header">
-        <div class="container">
-            <div class="row align-items-start">
-                <div class="col">
-                    <div id="up"></div>
-                    <h1>
-                        <!-- until correct answer propogates from clicking the correct button the timer is not centered -->
-                        <div id="score-up">0</div>
-                    </h1>
-                </div>
-            </div>
-            <div class="col">
-                <div class="timer">
-                    <span id="timer"></span>
-                </div>
-            </div>
-            <div class="col">
-                <div id="wr"></div>
-                <h1>
-                    <div id="down">0</div>
-                </h1>
-            </div>
-        </div>
-        </div>
-    </nav>
-</head>
-<!-- body begin -->
-
-<body id="body">
-    <br>
-    <!-- <div id="game-over">0</div> -->
+#body {
+  background-image: url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  margin-top: 0%;
+  /* position:relative; */
+  background-repeat: repeat;
+  background-position: top;
 
 
-    <div class="jumbotron vertical-center" id="jumbotron">
-        <div class="quiz" id="quiz"></div>
-        
-        <div class="col box">
-            <div id="start"></div>
-        </div>
-        <!-- question button start -->
+}
 
-        <ul id="options">
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-correct-answer">
-                    <p id="ans1"></p>
-                </button></div>
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
-                    <p id="ans2"></p>
-                </button></div>
+.box div {
+  width: 100px;
+  height: 100px;
+}
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
-                    <p id="ans3"></p>
-                </button></div>
+.box1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
-                    <p id="ans4"></p>
-                </button></div>
+.box1 div {
+  width: 100px;
+  height: 100px;
+}
 
-        </ul>
-        <!-- question content end -->
-        <!-- notification of how manu questions are left start -->
-        <div class="col-sm">
-            <div class="box" id="ql">Questions Left <p id="questions-left">10</p>
-            </div>
-            <!-- notification of how manu questions are left end -->
+/* header begin */
+#header {
+  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62, .0));
+  width: 100%;
+  height: auto;
+  position: fixed;
 
-            <script type="text/javascript" src="./assets/javascript/app.js">
-                // link to javascript file presents here
-            </script>
-            <!-- Footer Begin -->
-            <nav class="navbar navbar-nav navbar fixed-bottom " style="background-color: transparent;" id="footer">
-                <div class="dropup">
-                    <!-- interactive copyright button provides personal contact info start -->
-                    <div class="dropbtn">© 2018 | Jason Schutz</div>
-                    <div class="dropup-content">
+}
 
-                        <a id="personal-link" href="mailto: jason@rogueathletic.com" taerget="_blank" alt="Jason Schutz Email Link">Email</a>
-                        <a id="personal-link" href="sms:1-714-916-8783">Text</a>
-                        <a id="personal-link" href="tel:1-714-916-8783">Call</a>
-                        <!-- interactive copyright button provides personal contact info end -->
-                    </div>
-                </div>
-            </nav>
-</body>
+#header {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
 
-</html>
+/* header end */
+/* footer begin */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropup-content {
+  display: none;
+  /* position: absolute; */
+  bottom: 50px;
+  z-index: 1;
+  Text-align: center;
+  margin-top: 1em;
+}
+
+.dropup-content a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+
+}
+
+.dropup-content a:hover {
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .000001), rgba(51, 70, 62, .1), rgba(51, 70, 62, .000001));
+
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+  padding-left: 20pt;
+}
+
+.dropup:hover .dropbtn {
+  background-color: transparent;
+}
+
+#footer {
+  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
+  margin-top: 10%;
+}
+
+/* footer end */
+
+
+
+
+#jumbotron {
+  width: 90%;
+  height: 90%;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 15%;
+  position: relative;
+  background-color: transparent;
+  background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
+  background-size: 100%;
+  -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+}
+
+#jumbotron:before,
+#jumbotron:after {
+  z-index: -1;
+  position: absolute;
+  bottom: 25px;
+  left: 5em;
+  width: 50%;
+  top: 80%;
+
+}
+
+#jumbotron:after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+
+.btn {
+  border-radius: 1em;
+  ;
+  margin-top: 1em;
+  margin-left: -5%;
+  min-width: 70%;
+  width: 90%;
+  height: auto;
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .1), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
+    rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
+  background-size: 40%;
+  padding-top: 1em;
+  box-shadow: 5px 10px 18px #000000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
+}
+
+#quiz {
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
+    rgba(51, 70, 62, .5), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .002));
+  width: auto;
+  margin: 1em;
+  color: white;
+  text-align: center;
+  left: auto;
+  font-size: 32px;
+  text-shadow: 3px 3px 3px rgb(51, 70, 62);
+}
+
+#start {
+  background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 9999999999;
+
+}
+
+#start:hover {
+  background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
+
+
+}
+
+#start:active {
+  background-image: url("https://i.postimg.cc/x8sVZ9T7/start.png");
+
+}
+
+#score-up,
+#up {
+  color: yellowgreen;
+  text-align: left;
+  text-shadow: 4px 4px 5px rgb(51, 70, 62);
+
+}
+
+#timer {
+  color: white;
+  font-size: 30pt;
+  text-shadow: 4px 4px 5px rgb(51, 70, 62);
+  float: right;
+  justify-content: right;
+
+}
+
+#down,
+#wr {
+  color: red;
+
+  text-shadow: 4px 4px 5px rgb(51, 70, 62);
+  text-align: right;
+
+}
+
+.dropup {
+  color: #06d406;
+  text-align: right;
+
+  position: relative;
+  display: inline-block;
+  font-size: 12pt;
+}
+
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 1;
+
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+#personal-link {
+  color: rgba(72, 102, 89, 0.61);
+
+
+}
+
+#personal-link:hover {
+  color: rgba(211, 219, 216, 0.815);
+  text-shadow: 0 0 4px rgba(51, 70, 62, 1);
+
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#container>div {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(-45deg, #788cff, #b4c8ff);
+}
+
+#ql {
+  color: darkslategrey;
+  Float: center;
+
+  text-align: center;
+
+
+}
+
+#rules {
+  text-align: justify;
+}
+
+#questions-left {
+  margin-top: 11pt;
+  margin-left: 2pt;
+}
+
+@media only screen and (max-width: 500px) {
+  .btn {
+    background-color: rgb(0, 0, 0);
+    text-shadow: 2px, 2px, 3px rgb(51, 70, 62);
+    padding-top: 5%;
+    width: 100%;
+    border-radius: .5em;
+    margin-top: 10px;
+    margin-left: -20%;
+
+
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .my-name {
+    background-image: linear-gradient(90deg, rgba(51, 70, 62, .0000005), rgba(51, 70, 62, .0003), rgba(51, 70, 62, .2),
+      rgba(51, 70, 62, 0.0010), rgba(51, 70, 62, .05), rgba(51, 70, 62, .05), rgba(51, 70, 62, .1));
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  #start,
+  #start:hover #start:Active {
+
+    margin-left: -10%;
+    background-size: 60%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #down {
+    margin-top: 0%;
+    margin-left: 80%;
+    font-size: 16px;
+    ;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #score-up {
+    margin-left: -238%;
+    margin-left: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #timer {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  #wr,
+  #up,
+  #score-up {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #quiz {
+    font-size: 1em;
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #up {
+    text-align: left;
+
+  }
+}
+
+@media (min-width: 768px) {
+  #header {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #start {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+  }
+}
