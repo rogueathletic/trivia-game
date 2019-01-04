@@ -5,19 +5,19 @@ $(document).ready(function () {
     $('#ans2').parent().hide()
     $('#ans3').parent().hide()
     $('#ans4').parent().hide()
-    $('#quiz')         .hide()
-    $('#score-up')     .hide()
-    $('#up').          .hide()
-    $('#down')         .hide()
-    $('#wr')           .hide()
-    $('#ql')          .hide()
+    $('#quiz').hide()
+    $('#score-up').hide()
+    $('#up').hide()
+    $('#down').hide()
+    $('#wr').hide()
+    $('#ql').hide()
     /* ----------------> makes sure the question posting order is random <------------------ */
     newQPosition()
     /* ---------------->  <------------------ */
 });
 
-var questionList =    []
-var theGoodAnswer =   []
+var questionList = []
+var theGoodAnswer = []
 var theWrongAnswer1 = []
 var theWrongAnswer2 = []
 var theWrongAnswer3 = []
@@ -26,11 +26,11 @@ function newGame(){
     
 var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple"
 
-$.ajax ({
-        url: queryURL,
-        method: "GET"
+$.ajax({
+    url: queryURL,
+    method: "GET"
 
-}).then( function ( response ) {
+}).then(function (response) {
 
     var QuestionsLeft = 10;
     var questionDiv = $("<div>");
@@ -39,16 +39,16 @@ $.ajax ({
 
  /* ----------------> where the 10 questions are called from <------------------ */
     questionList = [
-        ( response.results[0].question ),
-        ( response.results[1].question ),
-        ( response.results[2].question ),
-        ( response.results[3].question ),
-        ( response.results[4].question ),
-        ( response.results[5].question ),
-        ( response.results[6].question ),
-        ( response.results[7].question ),
-        ( response.results[8].question ),
-        ( response.results[9].question )
+        (response.results[0].question),
+        (response.results[1].question),
+        (response.results[2].question),
+        (response.results[3].question),
+        (response.results[4].question),
+        (response.results[5].question),
+        (response.results[6].question),
+        (response.results[7].question),
+        (response.results[8].question),
+        (response.results[9].question)
     ]
   /* ----------------> where the 10 correct answers are called from <------------------ */
     theGoodAnswer = [
@@ -109,12 +109,13 @@ $.ajax ({
  /* ----------------> global variable for when a new game is called <------------------ */
 newGame()
 
+
+
 /* ----------------> Timeing Variables <------------------ */
-var initial = 30000;
+var initial = 60000;
 var count = initial;
 var counter = 1000; //10 will  run it every 100th of a second
-var initialMillis;
-var decimals = 2;
+var decimals = 4;
 var gameOver = 0;
 var currentIndex = 0;
 /* timing variables end */
