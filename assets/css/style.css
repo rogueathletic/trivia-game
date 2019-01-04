@@ -56,12 +56,13 @@
   padding: 16px;
   font-size: 16px;
   border: none;
+  z-index: -5;
 }
 
 .dropup {
   position: relative;
   display: inline-block;
-
+  z-index: -5;
 }
 
 .dropup-content {
@@ -71,6 +72,7 @@
   z-index: 1;
   Text-align: center;
   margin-top: 1em;
+    z-index: -5;
 }
 
 .dropup-content a {
@@ -78,26 +80,29 @@
   font-size: 20px;
   text-decoration: none;
   display: block;
-
+  z-index: -5;
 }
 
 .dropup-content a:hover {
   background-image: linear-gradient(90deg, rgba(51, 70, 62, .000001), rgba(51, 70, 62, .1), rgba(51, 70, 62, .000001));
-
+  z-index: -5;
 }
 
 .dropup:hover .dropup-content {
   display: block;
   padding-left: 20pt;
+    z-index: -5;
 }
 
 .dropup:hover .dropbtn {
   background-color: transparent;
+    z-index: -5;
 }
 
 #footer {
   background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
   margin-top: 10%;
+    z-index: -55;
 }
 
 /* footer end */
