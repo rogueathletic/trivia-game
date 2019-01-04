@@ -260,7 +260,7 @@ $('#ans1').parent().on('click', function () {
     $("#ans2").parent().fadeIn(900)
     $("#ans3").parent().fadeIn(900)
     $("#ans4").parent().fadeIn(900)
-    
+
     
 });
 /* ---------> incorrect answer <---------- */
