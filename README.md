@@ -1,5 +1,7 @@
 # trivia-game
-<h1>UCSD full stack coding bootcamp week 5 trivia game easier version</h1>
+<h1>UCSD full stack coding bootcamp 
+  <hr>
+  week 5 trivia game easier version</h1>
 <hr>
 <a href='https://rogueathletic.github.io/trivia-game/' target='_blank'>
   
