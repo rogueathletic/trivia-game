@@ -1,5 +1,5 @@
 # trivia-game
-<h1 Style="Text-align: Center color:darkslate;"> UCSD full stack coding bootcamp </h1>
+<h1 Style="Text-align: Center color:red;"> UCSD full stack coding bootcamp </h1>
   <hr>
   <h2>week 5 trivia game easier version</h2>
 <hr>
