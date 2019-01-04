@@ -46,6 +46,7 @@
   display: inline-block;
   float: none;
   vertical-align: top;
+  z-index: 999;
 }
 
 /* header end */
@@ -131,7 +132,7 @@
 
 #jumbotron:before,
 #jumbotron:after {
-  z-index: -1;
+
   position: absolute;
   bottom: 25px;
   left: 5em;
@@ -148,6 +149,7 @@
   transform: rotate(8deg);
   right: 10px;
   left: auto;
+
 }
 
 
@@ -230,6 +232,7 @@
 
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
   text-align: right;
+  z-index: 999;
 
 }
 
