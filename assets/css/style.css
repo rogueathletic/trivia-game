@@ -210,6 +210,8 @@
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
   float: right;
   justify-content: right;
+  z-index: 9999999999;
+  position: static;
 
 }
 
@@ -314,11 +316,17 @@
 @media only screen and (max-width: 500px) {
 
   #start,
-  #start:hover #start:Active {
+  #start:hover,
+  #start:Active {
 
-    margin-left: -10%;
+    margin-top: 20%;
+    margin-left: 18%;
     background-size: 60%;
     position: relative;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
   }
 }
 
@@ -352,7 +360,14 @@
     font-size: 16px;
   }
 }
+@media only screen and (max-width: 500px) {
 
+ 
+
+  #score-up {
+    text-align: left;
+  }
+}
 @media only screen and (max-width: 500px) {
   #quiz {
     font-size: 1em;
@@ -376,11 +391,11 @@
   }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   #start {
     align-content: center;
     display: flex;
     justify-content: center;
     vertical-align: middle;
   }
-}
+} */
