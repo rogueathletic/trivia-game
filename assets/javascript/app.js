@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("ready!");
+    console.log("lets play!");
     /* ----------------> below is how the  game is formatted on load <------------------ */
     $('#ans1').parent().hide()
     $('#ans2').parent().hide()
@@ -11,189 +11,141 @@ $(document).ready(function () {
     $('#wr').hide()
     $('#ql').hide()
     $('#score-up').hide()
+    newQPosition()
     /* ---------------->above is how the  game is formatted on load <------------------ */
 });
 
+var questionList = []
+var theGoodAnswer = []
+var theWrongAnswer1 = []
+var theWrongAnswer2 = []
+var theWrongAnswer3 = []
 
+function newGame(){
+    
+var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple"
 
-var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple";
-console.log('queryURL', queryURL);
-
-// gets the api call for me
 $.ajax({
     url: queryURL,
     method: "GET"
 
-    // then it does this
-}).then(function () {
+}).then(function (response) {
+
+    var QuestionsLeft = 10;
+    var questionDiv = $("<div>");
+    var p = $("<p>").html(response.results[0].question);
+    $(questionDiv).append(p);
 
 
-    var questionList = [
-        console.log('questionList', questionList)
-        (response.results[0].question)
-        (response.results[1].question)
-        (response.results[2].question)
-        (response.results[3].question)
-        (response.results[4].question)
-        (response.results[5].question)
-        (response.results[6].question)
-        (response.results[7].question)
-        (response.results[8].question)
+    questionList = [
+        (response.results[0].question),
+        (response.results[1].question),
+        (response.results[2].question),
+        (response.results[3].question),
+        (response.results[4].question),
+        (response.results[5].question),
+        (response.results[6].question),
+        (response.results[7].question),
+        (response.results[8].question),
         (response.results[9].question)
     ]
-    var theGoodAnswer = [
-        console.log('theGoodAnswer', theGoodAnswer)
-        (response.results[0].correct_answer)
-        (response.results[1].correct_answer)
-        (response.results[2].correct_answer)
-        (response.results[3].correct_answer)
-        (response.results[4].correct_answer)
-        (response.results[5].correct_answer)
-        (response.results[6].correct_answer)
-        (response.results[7].correct_answer)
-        (response.results[8].correct_answer)
+ 
+    theGoodAnswer = [
+        (response.results[0].correct_answer),
+        (response.results[1].correct_answer),
+        (response.results[2].correct_answer),
+        (response.results[3].correct_answer),
+        (response.results[4].correct_answer),
+        (response.results[5].correct_answer),
+        (response.results[6].correct_answer),
+        (response.results[7].correct_answer),
+        (response.results[8].correct_answer),
         (response.results[9].correct_answer)
     ]
+ 
     
-    var wrongAnswer1 = [
-        console.log('wrongAnswer1', wrongAnswer1)
-        (response.results[0].incorrect_answers[0])
-        (response.results[1].incorrect_answers[0])
-        (response.results[2].incorrect_answers[0])
-        (response.results[3].incorrect_answers[0])
-        (response.results[4].incorrect_answers[0])
-        (response.results[5].incorrect_answers[0])
-        (response.results[6].incorrect_answers[0])
-        (response.results[7].incorrect_answers[0])
-        (response.results[8].incorrect_answers[0])
+    wrongAnswer1 = [
+        (response.results[0].incorrect_answers[0]),
+        (response.results[1].incorrect_answers[0]),
+        (response.results[2].incorrect_answers[0]),
+        (response.results[3].incorrect_answers[0]),
+        (response.results[4].incorrect_answers[0]),
+        (response.results[5].incorrect_answers[0]),
+        (response.results[6].incorrect_answers[0]),
+        (response.results[7].incorrect_answers[0]),
+        (response.results[8].incorrect_answers[0]),
         (response.results[9].incorrect_answers[0])
     ]
-    
-    var wrongAnswer2 = [
-        console.log('wrongAnswer2', wrongAnswer2)
-        (response.results[0].incorrect_answers[1])
-        (response.results[1].incorrect_answers[1])
-        (response.results[2].incorrect_answers[1])
-        (response.results[3].incorrect_answers[1])
-        (response.results[4].incorrect_answers[1])
-        (response.results[5].incorrect_answers[1])
-        (response.results[6].incorrect_answers[1])
-        (response.results[7].incorrect_answers[1])
-        (response.results[8].incorrect_answers[1])
+
+    wrongAnswer2 = [
+        (response.results[0].incorrect_answers[1]),
+        (response.results[1].incorrect_answers[1]),
+        (response.results[2].incorrect_answers[1]),
+        (response.results[3].incorrect_answers[1]),
+        (response.results[4].incorrect_answers[1]),
+        (response.results[5].incorrect_answers[1]),
+        (response.results[6].incorrect_answers[1]),
+        (response.results[7].incorrect_answers[1]),
+        (response.results[8].incorrect_answers[1]),
         (response.results[9].incorrect_answers[1])
     ]
+
     
-    var wrongAnswer3 = [
-        console.log('wrongAnswer3', wrongAnswer3)
-        (response.results[0].incorrect_answers[2])
-        (response.results[1].incorrect_answers[2])
-        (response.results[2].incorrect_answers[2])
-        (response.results[3].incorrect_answers[2])
-        (response.results[4].incorrect_answers[2])
-        (response.results[5].incorrect_answers[2])
-        (response.results[6].incorrect_answers[2])
-        (response.results[7].incorrect_answers[2])
-        (response.results[8].incorrect_answers[2])
+    wrongAnswer3 = [
+        (response.results[0].incorrect_answers[2]),
+        (response.results[1].incorrect_answers[2]),
+        (response.results[2].incorrect_answers[2]),
+        (response.results[3].incorrect_answers[2]),
+        (response.results[4].incorrect_answers[2]),
+        (response.results[5].incorrect_answers[2]),
+        (response.results[6].incorrect_answers[2]),
+        (response.results[7].incorrect_answers[2]),
+        (response.results[8].incorrect_answers[2]),
         (response.results[9].incorrect_answers[2])
     ]
 
-    var questionList = document.getElementById('quiz');
-    var theGoodAnswer = document.getElementById('ans1');
-    var wrongAnswer1 = document.getElementById('ans2');
-    var wrongAnswer2 = document.getElementById('ans3');
-    var wrongAnswer3 = document.getElementById('ans4');
-    
-    // let res = response.results;
-    // let yep = correct_answer;
-
-    // var questionList = [
-    //     [res[0]]
-    //     [res[1]]
-    //     [res[2]]
-    //     [res[3]]
-    //     [res[4]]
-    //     [res[5]]
-    //     [res[6]]
-    //     [res[7]]
-    //     [res[8]]
-    //     [res[9]]
-    // ]
-    // var theGoodAnswer = [
-    //     [res[0].yep]
-    //     [res[1].yep]
-    //     [res[2].yep]
-    //     [res[3].yep]
-    //     [res[4].yep]
-    //     [res[5].yep]
-    //     [res[6].yep]
-    //     [res[7].yep]
-    //     [res[8].yep]
-    //     [res[9].yep]
-    // ]
-
-    // var wrongAnswer1 = [
-    //     [res[0].nope[0]]
-    //     [res[1].nope[0]]
-    //     [res[2].nope[0]]
-    //     [res[3].nope[0]]
-    //     [res[4].nope[0]]
-    //     [res[5].nope[0]]
-    //     [res[6].nope[0]]
-    //     [res[7].nope[0]]
-    //     [res[8].nope[0]]
-    //     [res[9].nope[0]]
-    // ]
-
-    // var wrongAnswer2 = [
-    //     [res[0].nope[1]]
-    //     [res[1].nope[1]]
-    //     [res[2].nope[1]]
-    //     [res[3].nope[1]]
-    //     [res[4].nope[1]]
-    //     [res[5].nope[1]]
-    //     [res[6].nope[1]]
-    //     [res[7].nope[1]]
-    //     [res[8].nope[1]]
-    //     [res[9].nope[1]]
-    // ]
-
-    // var wrongAnswer3 = [
-    //     [res[0].nope[2]]
-    //     [res[1].nope[2]]
-    //     [res[2].nope[2]]
-    //     [res[3].nope[2]]
-    //     [res[4].nope[2]]
-    //     [res[5].nope[2]]
-    //     [res[6].nope[2]]
-    //     [res[7].nope[2]]
-    //     [res[8].nope[2]]
-    //     [res[9].nope[2]]
-    // ]
 
 
-    var ourQuestions = response.results;
-    var QuestionsLeft = 10;
-    var questionDiv = $("<div>");
-    var p = $("<p>").html(ourQuestions[0].question);
-    $(questionDiv).append(p);
-    $("#quiz").append(questionDiv);
+   
 
-});
+})};
+newGame()
 /* Timeing Variables */
-var initial = 10000;
+var initial = 20000;
 var count = initial;
-var counter = 10; //10 will  run it every 100th of a second
+var counter = 1000; //10 will  run it every 100th of a second
 var initialMillis;
 var decimals = 2;
 var gameOver = 0;
+var currentIndex = 0;
 /* timing variables end */
 //this variable tells the below nextElement function to only move one comma at a time on command
-var index =
-    answer = 1
-answer1 = 1
-answer2 = 1
-answer3 = 1
-answer4 = 1
+
+var answerIndex = 1
+var answerIndex1 = 1
+var answerIndex2 = 1
+var answerIndex3 = 1
+
+function nextQuestion(){
+    
+    newQPosition()
+
+    currentIndex++
+
+    var quesList = document.getElementById('quiz');
+    var theGoodAns = document.getElementById('ans1');
+    var wrongAns1 = document.getElementById('ans2');
+    var wrongAns2 = document.getElementById('ans3');
+    var wrongAns3 = document.getElementById('ans4');
+
+    
+    quesList.innerHTML   = questionList[currentIndex]; 
+    theGoodAns.innerHTML = theGoodAnswer[currentIndex]; 
+    wrongAns1.innerHTML  = wrongAnswer1[currentIndex]; 
+    wrongAns2.innerHTML  = wrongAnswer2[currentIndex]; 
+    wrongAns3.innerHTML  = wrongAnswer3[currentIndex]; 
+
+}
 
 
 // this is how the questions load to the game on start
@@ -206,24 +158,8 @@ var wrongAnswer2 = document.getElementById('ans3');
 var wrongAnswer3 = document.getElementById('ans4');
 
 
-quiz.innerHTML = questionList[0]; //Print first value of array right away.
-ans1.innerHTML = theGoodAnswer[0]; //Print first value of array right away.
-ans2.innerHTML = wrongAnswer1[0]; //Print first value of array right away.
-ans3.innerHTML = wrongAnswer2[0]; //Print first value of array right away.
-ans4.innerHTML = wrongAnswer3[0]; //Print first value of array right away.
-function nextElement() {
-    quiz.innerHTML = questionList[index.answer];
-    ans1.innerHTML = theGoodAnswer[index.answer1];
-    ans2.innerHTML = wrongAnswer1[index.answer2];
-    ans3.innerHTML = wrongAnswer2[index.answer3];
-    ans4.innerHTML = wrongAnswer3[index.answer4];
-    // 
-    index.answer = (index.answer + 1) % (questionList.length);
-    index.answer1 = (index.answer1 + 1) % (theGoodAnswer.length);
-    index.answer2 = (index.answer2 + 1) % (wrongAnswer1.wrongAnswer1);
-    index.answer3 = (index.answer3 + 1) % (wrongAnswer2.wrongAnswer1);
-    index.answer4 = (index.answer4 + 1) % (wrongAnswer3.wrongAnswer1);
-}
+
+
 /* ---------> sends answers to id in DOM <---------- */
 $("#quiz").append(questionList);
 $("#ans1").append(theGoodAnswer);
@@ -232,37 +168,40 @@ $("#ans3").append(wrongAnswer2);
 $("#ans4").append(wrongAnswer3);
 /* ---------> timer begin <---------- */
 function timer() {     /* --->  <--- */
+  
     if (--count == 0) {
                 stopTimer();
             }
     if(count <= 1){
-        $('#all-qanda').fadeOut(1000)
-        // $('#ans2').parent().fadeOut(1000)
-        // $('#ans3').parent().fadeOut(3000)
-        // $('#ans4').parent().fadeOut(4000)
+
+    newGame()
         $('#quiz').text("Time Is up! Are you ready to try your luck again?")
         $('#start').parent().show(7000)
         $('#timer').fadeOut()
         $('#options').fadeOut()
         $('#ql').fadeOut(6000)
         $('#up').fadeOut(3000)
-        $('#final-score').append(finalTotal);
+        // $('#final-score').append(finalTotal);
         $('#final-score').fadeIn(1000)
-        $('#quiz').fadeOut(10000)
+        // $('#quiz').fadeOut(10000)
+        count = initial;
+
+        clearInterval(counter)
            return;
     };
     var current = Date.now()
     count = count - (current - initialMillis);
     initialMillis = current;
     displayCount(count);
-    console.log('displayCount', displayCount);
+
 }
 
 function displayCount(count) { /* ---> sends the timer to the screen <--- */
-    var
-        res = count / 1000; /* ---> the timing ofr each interval of time change <--- */
+    var res = count / 1000; /* ---> the timing ofr each interval of time change <--- */
+    
     document.getElementById("timer")
-        .innerHTML = res.toPrecision(count.toString().length - (4 - decimals));
+        .innerHTML = Math.ceil(res);
+        
 }
 /* ---------> on click funcitions begin <---------- */
 $('#start').on('click', function () { /* ---> action to start game <--- */
@@ -270,17 +209,39 @@ $('#start').on('click', function () { /* ---> action to start game <--- */
     $('#ans1').parent().fadeIn(1000) /* ---> brings in answer 1 <--- */
     $('#ans2').parent().fadeIn(1200) /* ---> brings in answer 2 <--- */
     $('#ans3').parent().fadeIn(1400) /* ---> brings in answer 3 <--- */
-    $('#ans4').parent().fadeIn(1600) /* ---> brings in answer 4 <--- */
+    $('#ans4').parent().fadeIn(1600)
+    $('#options').fadeIn() /* ---> brings in answer 4 <--- */
     $('#quiz').fadeIn(1800) /* ---> brings in the question to be answered <--- */
     $('#ql').fadeIn(1000) /* ---> brings in the questions left counter <--- */
+    $('#timer').fadeIn()
+    $('#quiz').html(questionList[0])
+    currentIndex = 0;
     initialMillis = Date.now();
-    counter = setInterval(timer, counter)
-    $('body').html(epicBackground).fadeIn(1800)
+         if (counter!== 10000){
+             clearInterval(counter)
+         } 
+            counter = setInterval(timer,1000)
+            var quesList = document.getElementById('quiz');
+            var theGoodAns = document.getElementById('ans1');
+            var wrongAns1 = document.getElementById('ans2');
+            var wrongAns2 = document.getElementById('ans3');
+            var wrongAns3 = document.getElementById('ans4');
+        
+            
+            quesList.innerHTML   = questionList[0]; 
+            theGoodAns.innerHTML = theGoodAnswer[0]; 
+            wrongAns1.innerHTML  = wrongAnswer1[0]; 
+            wrongAns2.innerHTML  = wrongAnswer2[0]; 
+            wrongAns3.innerHTML  = wrongAnswer3[0];
     
 });
+
+
+
 /* ---------> correct answer <---------- */
 $('#ans1').parent().on('click', function () {
-  
+    setTimeout(function() { nextQuestion() },1000)
+
     $('#jumbotron').fadeOut(1000).fadeIn(1000);
     $('#score-up').fadeIn(1000)
     $('#up').text("Correct:");
@@ -291,7 +252,10 @@ $('#ans1').parent().on('click', function () {
     var number = parseInt($('#questions-left').text());
     number -= 1;
     $('#questions-left').text(number);
-
+    $("#ans2").parent().fadeIn(900)
+    $("#ans3").parent().fadeIn(900)
+    $("#ans4").parent().fadeIn(900)
+    
     
 });
 /* ---------> incorrect answer <---------- */
@@ -301,8 +265,8 @@ $('#ans2').parent().on('click', function () {
     $('#down').text(number).fadeIn(3000);
     $('#wr').text("Wrong: ");
     $("#ans2").parent().fadeOut(900)
-    $('#wr').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
-    $('#down').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
+    $('#wr').fadeIn(1000) 
+    $('#down').fadeIn(1000)
 });
 /* ---------> incorrect answer <---------- */
 $('#ans3').parent().on('click', function () {
@@ -311,8 +275,8 @@ $('#ans3').parent().on('click', function () {
     $('#down').text(number).fadeIn(3000);
     $('#wr').text("Wrong: ");
     $('#ans3').parent().fadeOut(900)
-    $('#wr').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
-    $('#down').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
+    $('#wr').fadeIn(1000) 
+    $('#down').fadeIn(1000) 
 });
 /* ---------> incorrect answer <---------- */
 $('#ans4').parent().on('click', function () {
@@ -321,20 +285,18 @@ $('#ans4').parent().on('click', function () {
     $('#down').text(number).fadeIn(3000);
     $('#wr').text("Wrong: ");
     $('#ans4').parent().fadeOut(900)
-    $('#wr').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
-    $('#down').fadeIn(1000) /* ---> brings in the wrong answers counter <--- */
+    $('#wr').fadeIn(1000)
+    $('#down').fadeIn(1000) 
 });
-/* ---> allows for random order of answers <--- */
-var options = document.querySelector('#options');
-for (var i = options.children.length; i >= 0; i++) {
-    options.appendChild(options.children[Math.random() * i | 0]);
-}
-/* ---> balances width of the buttons <--- */
-var choices = document.querySelectorAll('.btn');
-var maxWidth = 0;
-for (i = 0; i < choices.length; ++i) {
-    maxWidth = Math.max(maxWidth, choices[i].offsetWidth)
-};
-for (i = 0; i < choices.length; ++i) {
-    choices[i].style.width = minWidth;
-};
+
+
+var answerRandom = options.children
+function newQPosition(){
+    var options = document.querySelector('#options');
+for (var i = options.children.length; i >= 0; i--) {
+var randomizer = options.children[(Math.floor(Math.random() * i ))];
+
+    options.appendChild(randomizer)
+}}
+
+// var choices = document.querySelectorAll('.btn');
