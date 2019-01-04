@@ -237,6 +237,11 @@ $('#start').on('click', function () { /* ---> action to start game <--- */
     
 });
 
+function scoreBoard(){
+    $('#score-up').text(number);
+    var number = parseInt($('#questions-left').text());
+    number -= 1;
+}
 
 
 /* ---------> correct answer <---------- */
