@@ -6,13 +6,14 @@ $(document).ready(function () {
     $('#ans3').parent().hide()
     $('#ans4').parent().hide()
     $('#quiz').hide()
+    $('#score-up').hide()
     $('#up').hide()
     $('#down').hide()
     $('#wr').hide()
     $('#ql').hide()
-    $('#score-up').hide()
+    /* ----------------> makes sure the question posting order is random <------------------ */
     newQPosition()
-    /* ---------------->above is how the  game is formatted on load <------------------ */
+    /* ---------------->  <------------------ */
 });
 
 var questionList = []
@@ -36,7 +37,7 @@ $.ajax({
     var p = $("<p>").html(response.results[0].question);
     $(questionDiv).append(p);
 
-
+ /* ----------------> where the 10 questions are called from <------------------ */
     questionList = [
         (response.results[0].question),
         (response.results[1].question),
@@ -49,7 +50,7 @@ $.ajax({
         (response.results[8].question),
         (response.results[9].question)
     ]
- 
+  /* ----------------> where the 10 correct answers are called from <------------------ */
     theGoodAnswer = [
         (response.results[0].correct_answer),
         (response.results[1].correct_answer),
@@ -63,7 +64,7 @@ $.ajax({
         (response.results[9].correct_answer)
     ]
  
-    
+     /* ----------------> where the 10 incorrect #1 answers are called from <------------------ */
     wrongAnswer1 = [
         (response.results[0].incorrect_answers[0]),
         (response.results[1].incorrect_answers[0]),
@@ -76,7 +77,7 @@ $.ajax({
         (response.results[8].incorrect_answers[0]),
         (response.results[9].incorrect_answers[0])
     ]
-
+ /* ----------------> where the 10 incorrect #2 answers are called from <------------------ */
     wrongAnswer2 = [
         (response.results[0].incorrect_answers[1]),
         (response.results[1].incorrect_answers[1]),
@@ -90,7 +91,7 @@ $.ajax({
         (response.results[9].incorrect_answers[1])
     ]
 
-    
+     /* ----------------> where the 10 incorrect #3 answers are called from <------------------ */
     wrongAnswer3 = [
         (response.results[0].incorrect_answers[2]),
         (response.results[1].incorrect_answers[2]),
@@ -103,14 +104,14 @@ $.ajax({
         (response.results[8].incorrect_answers[2]),
         (response.results[9].incorrect_answers[2])
     ]
-
-
-
-   
-
 })};
+
+ /* ----------------> global variable for when a new game is called <------------------ */
 newGame()
-/* Timeing Variables */
+
+
+
+/* ----------------> Timeing Variables <------------------ */
 var initial = 20000;
 var count = initial;
 var counter = 1000; //10 will  run it every 100th of a second
@@ -120,7 +121,7 @@ var gameOver = 0;
 var currentIndex = 0;
 /* timing variables end */
 //this variable tells the below nextElement function to only move one comma at a time on command
-
+/* ----------------> the number position the new Q&A will move through the quiz <------------------ */
 var answerIndex = 1
 var answerIndex1 = 1
 var answerIndex2 = 1
@@ -151,21 +152,21 @@ function nextQuestion(){
 // this is how the questions load to the game on start
 
 
-var questionList = document.getElementById('quiz');
+var questionList =  document.getElementById('quiz');
 var theGoodAnswer = document.getElementById('ans1');
-var wrongAnswer1 = document.getElementById('ans2');
-var wrongAnswer2 = document.getElementById('ans3');
-var wrongAnswer3 = document.getElementById('ans4');
+var wrongAnswer1 =  document.getElementById('ans2');
+var wrongAnswer2 =  document.getElementById('ans3');
+var wrongAnswer3 =  document.getElementById('ans4');
 
 
 
 
 /* ---------> sends answers to id in DOM <---------- */
-$("#quiz").append(questionList);
-$("#ans1").append(theGoodAnswer);
-$("#ans2").append(wrongAnswer1);
-$("#ans3").append(wrongAnswer2);
-$("#ans4").append(wrongAnswer3);
+$("#quiz").append ( questionList );
+$("#ans1").append ( theGoodAnswer);
+$("#ans2").append ( wrongAnswer1 );
+$("#ans3").append ( wrongAnswer2 );
+$("#ans4").append ( wrongAnswer3 );
 /* ---------> timer begin <---------- */
 function timer() {     /* --->  <--- */
   
@@ -298,5 +299,3 @@ var randomizer = options.children[(Math.floor(Math.random() * i ))];
 
     options.appendChild(randomizer)
 }}
-
-// var choices = document.querySelectorAll('.btn');
