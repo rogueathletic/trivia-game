@@ -182,9 +182,7 @@
   display: flex;
   justify-content: space-around;
   z-index: 9999999999;
-  /* margin-left: 44%;
-  margin-right: 44%;
-  margin-bottom: 4%; */
+
 }
 
 #start:hover {
@@ -218,7 +216,7 @@
 #down,
 #wr {
   color: red;
-  /* float:left; */
+
   text-shadow: 4px 4px 5px rgb(51, 70, 62);
   text-align: right;
 
@@ -251,19 +249,19 @@
 #personal-link {
   color: rgba(72, 102, 89, 0.61);
 
-  /* #80ff80; */
+
 }
 
 #personal-link:hover {
   color: rgba(211, 219, 216, 0.815);
   text-shadow: 0 0 4px rgba(51, 70, 62, 1);
-  /* #80ff80; */
+
 }
 
 #container {
   display: flex;
   justify-content: space-between;
-  /* Can be changed in the live sample */
+
 }
 
 #container>div {
@@ -275,9 +273,9 @@
 #ql {
   color: darkslategrey;
   Float: center;
-  /* float:right; */
+
   text-align: center;
-  /* position: relative; */
+
 
 }
 
