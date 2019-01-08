@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -20,8 +18,8 @@
     <nav class="navbar navbar-nav navbar" style="background-color: transparent;" id="header">
         <div class="container">
             <div class="row align-items-start">
-                <div class="col">
-                    <div  id="up"></div>
+                <div class="col" id="upness">
+                    <div id="up"></div>
                     <h1>
                         <!-- until correct answer propogates from clicking the correct button the timer is not centered -->
                         <div id="score-up">0</div>
@@ -43,40 +41,34 @@
         </div>
     </nav>
 </head>
-<!-- body begin -->
 
 <body id="body">
-
-
-
-
     <br>
     <!-- <div id="game-over">0</div> -->
-
-
     <div class="jumbotron vertical-center" id="jumbotron">
         <div class="quiz" id="quiz"></div>
-        
+
         <div class="col box">
             <div id="start"></div>
+
         </div>
         <!-- question button start -->
 
         <ul id="options">
-  
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-correct-answer">
+
+            <div class="col vertical-center box"><button class="btn btn-info" alt="always-correct-answer">
                     <p id="ans1"></p>
                 </button></div>
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
+            <div class="col vertical-center box"><button class="btn btn-info" alt="always-incorrect-answer">
                     <p id="ans2"></p>
                 </button></div>
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
+            <div class="col vertical-center box"><button class="btn btn-info" alt="always-incorrect-answer">
                     <p id="ans3"></p>
                 </button></div>
 
-            <div class="col vertical-center box"><button class="btn btn-secondary" alt="always-incorrect-answer">
+            <div class="col vertical-center box"><button class="btn btn-info" alt="always-incorrect-answer">
                     <p id="ans4"></p>
                 </button></div>
 
@@ -84,7 +76,7 @@
         <!-- question content end -->
         <!-- notification of how manu questions are left start -->
         <div class="col-sm">
-            <div class="box" id="ql">Questions Left <p id="questions-left">10</p>
+            <div class="vertical-center box" id="ql">Questions Left <p id="questions-left">10</p>
             </div>
             <!-- notification of how manu questions are left end -->
 
@@ -96,11 +88,11 @@
                 <div class="dropup">
                     <!-- interactive copyright button provides personal contact info start -->
                     <div class="dropbtn">© 2019 | Jason Schutz</div>
-                 
-                        <!-- interactive copyright button provides personal contact info end -->
-                    </div>
+
+                    <!-- interactive copyright button provides personal contact info end -->
                 </div>
-            </nav>
+        </div>
+        </nav>
 </body>
 
 </html>
