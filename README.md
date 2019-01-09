@@ -6,16 +6,16 @@
   
 <p style="text-align:justify;">Some of the primary tools used to compelte this project:</p>
 <ul>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML 5</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS 3</li>
-  <li>Javascript 4.2.1</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jQuery 3.2.1</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Google Fonts</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opentdb.com/api</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photoshop CC</li>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Illustrator CC</li>
-  <li>Visual Studio Code</li>
-  <li>Git Hub</li>
+  <li>&nbsp;&nbsp; HTML 5</li>
+  <li>&nbsp;&nbsp; CSS 3</li>
+  <li>&nbsp;&nbsp; Javascript 4.2.1</li>
+  <li>&nbsp;&nbsp; jQuery 3.2.1</li>
+  <li>&nbsp;&nbsp; Google Fonts</li>
+  <li>&nbsp;&nbsp; opentdb.com/api</li>
+  <li>&nbsp;&nbsp; Photoshop CC</li>
+  <li>&nbsp;&nbsp; Illustrator CC</li>
+  <li>&nbsp;&nbsp; Visual Studio Code</li>
+  <li>&nbsp;&nbsp; Git Hub</li>
 </ul>
 <hr>
 <H3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on the image below to begin:</h3>
