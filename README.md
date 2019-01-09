@@ -6,8 +6,8 @@
   
 <p style="text-align:justify;">Some of the primary tools used to compelte this project:</p>
 <ul>
-  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTML 5</li>
-  <li>CSS 3</li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;HTML 5</li>
+  <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS 3</li>
   <li>Javascript 4.2.1</li>
   <li>jQuery 3.2.1</li>
   <li>Google Fonts</li>
