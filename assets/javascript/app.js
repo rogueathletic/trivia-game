@@ -1,47 +1,47 @@
 $(document).ready(function () {
     console.log("lets play!");
     /* ----------------> below is how the  game is formatted on load <------------------ */
-    $('#ans1').parent().hide()
-    $('#ans2').parent().hide()
-    $('#ans3').parent().hide()
-    $('#ans4').parent().hide()
-    $('#quiz').hide()
-    $('#score-up').hide()
+    $('#ans1'     ).parent().hide()
+    $('#ans2'     ).parent().hide()
+    $('#ans3'     ).parent().hide()
+    $('#ans4'     ).parent().hide()
+    $('#quiz'     ).hide()
+    $('#score-up' ).hide()
     $('.game-over').hide()
-    $('#up').hide()
-    $('#down').hide()
-    $('#wr').hide()
-    $('#ql').hide()
+    $('#up'       ).hide()
+    $('#down'     ).hide()
+    $('#wr'       ).hide()
+    $('#ql'       ).hide()
     /* ----------------> makes sure the question posting order is random <------------------ */
     newQPosition()
     /* ---------------->  <------------------ */
 });
 
-var questionList = [];
-var theGoodAnswer = [];
+var questionList    = [];
+var theGoodAnswer   = [];
 var theWrongAnswer1 = [];
 var theWrongAnswer2 = [];
 var theWrongAnswer3 = [];
-var numberUp = "";
-var numberDown = "";
-var numberLeft = "";
-gameOver()
+var numberUp        = "";
+var numberDown      = "";
+var numberLeft      = "";
+gameOver               ()
 
-function gameOver(){
-var gameOver = parseInt($('#scoreUp').text());
+function gameOver (){
+var gameOver = parseInt ($('#scoreUp').text());
 }
 
-// newGame()
 
-function newGame() {
+
+function newGame () {
 
     var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple"
 
-    $.ajax({
+    $.ajax ({
         url: queryURL,
         method: "GET"
 
-    }).then(function (response) {
+    }).then( function ( response ) {
 
         var QuestionsLeft = 10;
         var questionDiv = $("<div>");
@@ -50,70 +50,70 @@ function newGame() {
 
         /* ----------------> where the 10 questions are called from <------------------------------ */
         questionList = [
-            (response.results[0].question),
-            (response.results[1].question),
-            (response.results[2].question),
-            (response.results[3].question),
-            (response.results[4].question),
-            (response.results[5].question),
-            (response.results[6].question),
-            (response.results[7].question),
-            (response.results[8].question),
-            (response.results[9].question)
+            ( response.results[0].question             ),
+            ( response.results[1].question             ),
+            ( response.results[2].question             ),
+            ( response.results[3].question             ),
+            ( response.results[4].question             ),
+            ( response.results[5].question             ),
+            ( response.results[6].question             ),
+            ( response.results[7].question             ),
+            ( response.results[8].question             ),
+            ( response.results[9].question             )
         ]
         /* ----------------> where the 10 correct answers are called from <------------------------ */
         theGoodAnswer = [
-            (response.results[0].correct_answer),
-            (response.results[1].correct_answer),
-            (response.results[2].correct_answer),
-            (response.results[3].correct_answer),
-            (response.results[4].correct_answer),
-            (response.results[5].correct_answer),
-            (response.results[6].correct_answer),
-            (response.results[7].correct_answer),
-            (response.results[8].correct_answer),
-            (response.results[9].correct_answer)
+            ( response.results[0].correct_answer       ),
+            ( response.results[1].correct_answer       ),
+            ( response.results[2].correct_answer       ),
+            ( response.results[3].correct_answer       ),
+            ( response.results[4].correct_answer       ),
+            ( response.results[5].correct_answer       ),
+            ( response.results[6].correct_answer       ),
+            ( response.results[7].correct_answer       ),
+            ( response.results[8].correct_answer       ),
+            ( response.results[9].correct_answer       )
         ]
 
         /* ----------------> where the 10 incorrect #1 answers are called from <------------------- */
         wrongAnswer1 = [
-            (response.results[0].incorrect_answers[0]),
-            (response.results[1].incorrect_answers[0]),
-            (response.results[2].incorrect_answers[0]),
-            (response.results[3].incorrect_answers[0]),
-            (response.results[4].incorrect_answers[0]),
-            (response.results[5].incorrect_answers[0]),
-            (response.results[6].incorrect_answers[0]),
-            (response.results[7].incorrect_answers[0]),
-            (response.results[8].incorrect_answers[0]),
-            (response.results[9].incorrect_answers[0])
+            ( response.results[0].incorrect_answers[0] ),
+            ( response.results[1].incorrect_answers[0] ),
+            ( response.results[2].incorrect_answers[0] ),
+            ( response.results[3].incorrect_answers[0] ),
+            ( response.results[4].incorrect_answers[0] ),
+            ( response.results[5].incorrect_answers[0] ),
+            ( response.results[6].incorrect_answers[0] ),
+            ( response.results[7].incorrect_answers[0] ),
+            ( response.results[8].incorrect_answers[0] ),
+            ( response.results[9].incorrect_answers[0] )
         ]
         /* ----------------> where the 10 incorrect #2 answers are called from <------------------- */
         wrongAnswer2 = [
-            (response.results[0].incorrect_answers[1]),
-            (response.results[1].incorrect_answers[1]),
-            (response.results[2].incorrect_answers[1]),
-            (response.results[3].incorrect_answers[1]),
-            (response.results[4].incorrect_answers[1]),
-            (response.results[5].incorrect_answers[1]),
-            (response.results[6].incorrect_answers[1]),
-            (response.results[7].incorrect_answers[1]),
-            (response.results[8].incorrect_answers[1]),
-            (response.results[9].incorrect_answers[1])
+            ( response.results[0].incorrect_answers[1] ),
+            ( response.results[1].incorrect_answers[1] ),
+            ( response.results[2].incorrect_answers[1] ),
+            ( response.results[3].incorrect_answers[1] ),
+            ( response.results[4].incorrect_answers[1] ),
+            ( response.results[5].incorrect_answers[1] ),
+            ( response.results[6].incorrect_answers[1] ),
+            ( response.results[7].incorrect_answers[1] ),
+            ( response.results[8].incorrect_answers[1] ),
+            ( response.results[9].incorrect_answers[1] )
         ]
 
         /* ----------------> where the 10 incorrect #3 answers are called from <------------------- */
         wrongAnswer3 = [
-            (response.results[0].incorrect_answers[2]),
-            (response.results[1].incorrect_answers[2]),
-            (response.results[2].incorrect_answers[2]),
-            (response.results[3].incorrect_answers[2]),
-            (response.results[4].incorrect_answers[2]),
-            (response.results[5].incorrect_answers[2]),
-            (response.results[6].incorrect_answers[2]),
-            (response.results[7].incorrect_answers[2]),
-            (response.results[8].incorrect_answers[2]),
-            (response.results[9].incorrect_answers[2])
+            ( response.results[0].incorrect_answers[2] ),
+            ( response.results[1].incorrect_answers[2] ),
+            ( response.results[2].incorrect_answers[2] ),
+            ( response.results[3].incorrect_answers[2] ),
+            ( response.results[4].incorrect_answers[2] ),
+            ( response.results[5].incorrect_answers[2] ),
+            ( response.results[6].incorrect_answers[2] ),
+            ( response.results[7].incorrect_answers[2] ),
+            ( response.results[8].incorrect_answers[2] ),
+            ( response.results[9].incorrect_answers[2] )
         ]
     })
 };
