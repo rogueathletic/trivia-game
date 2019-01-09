@@ -1,16 +1,15 @@
+/* manages the stretch and placement of the background image  */
 #body {
-  background-image: url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
-  background-size: cover;
   width: 100%;
   height: auto;
   margin-top: 0%;
-  /* position:relative; */
-  background-repeat: repeat;
+  background-size: cover;
   background-position: top;
-
-
+  background-repeat: repeat;
+  background-image: url("./assets/ok.png"), url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
 }
 
+/* sets absolute center for the answer buttons                      */
 .box {
   display: flex;
   align-items: center;
@@ -18,10 +17,11 @@
 }
 
 .box div {
-  width: 100px;
-  height: 100px;
+  width: auto;
+  height: 200px;
 }
 
+/* sets absolute center for the start button                       */
 .box1 {
   display: flex;
   align-items: center;
@@ -33,108 +33,7 @@
   height: 100px;
 }
 
-/* header begin */
-#header {
-  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62, .0));
-  width: 100%;
-  height: auto;
-  position: fixed;
-
-}
-
-#header {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-  z-index: 999;
-}
-
-/* header end */
-/* footer begin */
-.dropbtn {
-  background-color: transparent;
-  color: white;
-
-  padding: 10px;
-  justify-content: center;
-  font-size: 12px;
-  border: none;
-  z-index: -5;
-}
-
-.dropup {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  z-index: -5;
-}
-
-.dropup-content {
-  display: none;
-  /* position: absolute; */
-  bottom: 50px;
-  z-index: 1;
-  Text-align: center;
-  margin-top: 1em;
-  z-index: -5;
-}
-
-.dropup-content a {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  display: block;
-  z-index: -5;
-}
-
-.dropup-content a:hover {
-  background-image: linear-gradient(90deg, rgba(51, 70, 62, .000001), rgba(51, 70, 62, .1), rgba(51, 70, 62, .000001));
-  z-index: -5;
-}
-
-.dropup:hover .dropup-content {
-  display: block;
-  padding-left: 20pt;
-  z-index: -5;
-}
-
-.dropup:hover .dropbtn {
-  background-color: transparent;
-  z-index: -5;
-}
-
-#footer {
-  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
-  margin-top: 10%;
-  z-index: -55;
-}
-
-/* footer end */
-
-#contact-me {
-  list-style-type: none;
-}
-
-
-
-#jumbotron {
-  width: 90%;
-  height: 90%;
-  border-radius: 20px;
-  margin: auto;
-  margin-top: 12%;
-  margin-left: 5%;
-  margin-bottom: 5%;
-  justify-self: center;
-  background-color: transparent;
-  background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
-  background-size: 100%;
-  -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  z-index: -1;
-}
-
+/*  manages the look and feel of the buttons in the game but not the start button  */
 .btn {
 
   width: 90%;
@@ -150,53 +49,130 @@
   justify-content: center;
   background-color: transparent;
   box-shadow: 8px 8px rgba(0, 0, 0, .6);
+  text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
   background-image: linear-gradient(90deg, rgba(51, 70, 62, .1), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
     rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
-  text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
 }
 
+/* sets animation rules for the answer buttons                       */
 .btn:hover {
   background-color: rgba(0, 217, 255, 0.4);
   box-shadow: 3px 3px rgba(0, 0, 0, .6);
 }
 
-#quiz {
-  background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
-    rgba(51, 70, 62, .5), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .002));
-  width: auto;
-  margin: 1em;
-  color: white;
-  text-align: center;
-  left: auto;
-  font-size: 32px;
-  text-shadow: 3px 3px 3px rgb(51, 70, 62);
-  z-index: -999;
+/* sets rules for the answer buttons on screen size lower than 500px  */
+@media only screen and (max-width: 500px) {
+  .btn {
+    background-color: rgb(0, 0, 0);
+    text-shadow: 2px, 2px, 3px rgb(51, 70, 62);
+    padding-top: 2%;
+    font-size: 10pt;
+    border-radius: .5em;
+    margin-top: 10px;
+    margin-left: -20%;
+    background-color: transparent;
+    min-width: 180px;
+    max-width: 180px;
+    text-justify: inter-word;
 
+  }
 }
 
+/*     header begin                                                    */
+#header {
+  width: 100%;
+  float: none;
+  z-index: 999;
+  height: auto;
+  position: fixed;
+  vertical-align: top;
+  display: inline-block;
+  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62, .0));
+}
+
+/*     header end                                                      */
+/*     footer begin                                                    */
+
+/*      this is for the © 2019 | jason schutz in the footer            */
+.dropbtn {
+  z-index: -5;
+  border: none;
+  padding: 10px;
+  color: white;
+  font-size: 12px;
+  justify-content: center;
+  background-color: transparent;
+}
+
+/*     header end                                                      */
+#footer {
+  z-index: -55;
+  margin-top: 10%;
+  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
+}
+
+/*     footer end                                                       */
+/*     floating containerr for the whole game                           */
+#jumbotron {
+  width: 90%;
+  height: 90%;
+  z-index: -1;
+  margin: auto;
+  margin-top: 12%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  justify-self: center;
+  background-size: 100%;
+  background-color: transparent;
+  box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
+  background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
+}
+
+/*     this is the div that contains the appended questions            */
+#quiz {
+  left: auto;
+  width: auto;
+  margin: 1em;
+  z-index: -999;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  text-shadow: 3px 3px 3px rgb(51, 70, 62);
+  background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
+    rgba(51, 70, 62, .500), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2),
+    rgba(51, 70, 62, .002));
+}
+
+/*     start button for game                                            */
 #start {
   background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   display: flex;
   justify-content: center;
   z-index: 9999999999;
 
 }
 
+/*     color variance for start button for game                         */
 #start:hover {
   background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
-  z-index: 9999999999;
+
 
 }
 
+/*     color pop on click for start button                               */
 #start:active {
   background-image: url("https://i.postimg.cc/x8sVZ9T7/start.png");
-  z-index: 9999999999;
+
 }
 
+/*     color and position for the "correct: " and the Score #           */
 #score-up,
 #up {
   color: yellowgreen;
@@ -205,6 +181,7 @@
 
 }
 
+/*     sets position and color of time clock                            */
 #timer {
   color: white;
   font-size: 30pt;
@@ -216,6 +193,7 @@
 
 }
 
+/*     color and position for the "incorrect: " and the Score #         */
 #down,
 #wr {
   color: red;
@@ -227,21 +205,7 @@
 }
 
 
-
-#personal-link {
-  color: rgba(72, 102, 89, 0.61);
-  padding: 0%;
-
-}
-
-#personal-link:hover {
-  color: rgba(211, 219, 216, 0.815);
-  text-shadow: 0 0 4px rgba(51, 70, 62, 1);
-
-}
-
-
-
+/*     the physical questions presented to the DOM                      */
 #ql {
   color: white;
   text-shadow: 1 1 4px rgba(51, 70, 62, 1);
@@ -261,32 +225,14 @@
   margin-left: 2pt;
 }
 
-@media only screen and (max-width: 500px) {
-  .btn {
-    background-color: rgb(0, 0, 0);
-    text-shadow: 2px, 2px, 3px rgb(51, 70, 62);
-    padding-top: 2%;
-    font-size: 10pt;
-    border-radius: .5em;
-    margin-top: 10px;
-    margin-left: -20%;
-    background-color: transparent;
-    min-width: 180px;
-    max-width: 180px;
-    text-justify: inter-word;
-
-  }
+#winner {
+  width: auto;
+  Margin-bottom: 3.5%;
 }
 
-@media only screen and (max-width: 500px) {
+#final-score {
+  width: auto;
 
-  .dropbtn,
-  #personal-link {
-
-    margin-left: 0%;
-    font-size: 8px;
-
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -295,11 +241,11 @@
   #start:hover,
   #start:Active {
 
-    margin-top: 20%;
+
     text-align: center;
     background-size: 60%;
     position: static;
-    margin-left: 18%;
+    margin-left: 30%;
     z-index: 9999999999;
   }
 }
