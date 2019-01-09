@@ -284,7 +284,7 @@ $('#ans1').parent().on('click', function () {
         clearInterval(quesList);
         clearInterval(numberDown);
         clearInterval(numberUp);
-        displayCount(count);
+        clearInterval(count);
 
 
         return;
@@ -321,7 +321,7 @@ $('#ans2').parent().on('click', function () {
         clearInterval(quesList);
         clearInterval(numberDown);
         clearInterval(numberUp);
-        displayCount(count);
+        clearInterval(count);
 
 
         return;
@@ -358,7 +358,7 @@ $('#ans3').parent().on('click', function () {
         clearInterval(quesList);
         clearInterval(numberDown);
         clearInterval(numberUp);
-        displayCount(count);
+        clearInterval(count);
 
 
         return;
@@ -394,7 +394,7 @@ $('#ans4').parent().on('click', function () {
         clearInterval(quesList);
         clearInterval(numberDown);
         clearInterval(numberUp);
-        displayCount(count);
+        clearInterval(count);
 
 
         return;
