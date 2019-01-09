@@ -178,14 +178,14 @@ function timer() { /* --->  <--- */
     if (count <= 1) {
         newGame()
         $('#quiz').text("Time Is up you didnt win this round. Are you ready to try your luck again?")
-        $('#start').parent().show(500)
-        $('#timer').fadeOut()
-        $('#options').fadeOut()
-        $('#ql').fadeOut(6000)
-        $('#down').fadeOut(3000)
-        $('#score-up').fadeOut(3000)
-        $('#wr').fadeOut(3000)
-        $('#up').fadeOut(3000)
+        $('#start'       ).parent().show(500)
+        $('#timer'       ).fadeOut()
+        $('#options'     ).fadeOut()
+        $('#ql'          ).fadeOut()
+        $('#down'        ).fadeOut()
+        $('#score-up'    ).fadeOut()
+        $('#wr').fadeOut()
+        $('#up').fadeOut()
         
      
 
@@ -268,31 +268,31 @@ $('#ans1').parent().on('click', function () {
     numberUp += 1;
     var numberLeft = parseInt($('#questions-left').text());
     numberLeft -= 1;
-    $('#score-up').text(numberUp);
-    $('#questions-left').text(numberLeft);
-    if (numberLeft == 10) {
+        $('#score-up').text(numberUp);
+        $('#questions-left').text(numberLeft);
+    
+    
+        if (numberLeft == 10) {
+            $("#timer"          ).text("you got  " + numberUp + " answer correct!");
+            $("#winner"         ).html("<br><div>Your a winner!</div>");
+            $('#start'          ).parent().show(8000);
+            $('#down'           ).fadeOut();
+            $('#score-up'       ).hide();
+            $('#options'        ).fadeOut();
+            $('#ql'             ).fadeOut(2000);
+            // $('#timer'       ).fadeOut(2000)
+            $('#quiz'           ).fadeOut(2000);
+            $('#wr'             ).fadeOut(2000);
+            $('#up'             ).fadeOut();
+            $("#score-up"       ).text(0);
+            count = initial;
+            clearInterval(counter);
+            clearInterval(quesList);
+            clearInterval(numberDown);
+            clearInterval(numberUp);
+            displayCount(count);
 
-        $("#timer").text("you got  " + numberUp + " answer correct!");
-        $("#winner").html("<br><div>Your a winner!</div>");
-        $('#start').parent().show(8000);
-        $('#down').fadeOut();
-        $('#score-up').hide();
-        $('#options').fadeOut();
-        $('#ql').fadeOut(2000);
-        // $('#timer').fadeOut(2000)
-        $('#quiz').fadeOut(2000);
-        $('#wr').fadeOut(2000);
-        $('#up').fadeOut();
-        $("#score-up").text(0);
-        count = initial;
-        clearInterval(counter);
-        clearInterval(quesList);
-        clearInterval(numberDown);
-        clearInterval(numberUp);
-        displayCount(count);
-
-
-        return;
+            return;
     }
 
 });
@@ -300,12 +300,12 @@ $('#ans1').parent().on('click', function () {
 $('#ans2').parent().on('click', function () {
     var numberDown = parseInt($('#down').text());
     numberDown += 1;
-    $('#down').text(numberDown).fadeIn(3000);
-    $('#wr').text("Wrong: ");
-    $("#ans2").parent().fadeOut(900)
-    $('#wr').fadeIn(1000)
-    $('#timer').fadeIn(1000)
-    $('#down').fadeIn(1000)
+    $('#down'            ).text( numberDown ).fadeIn( 3000 );
+    $('#wr'              ).text( "Wrong: " );
+    $("#ans2"            ).parent().fadeOut( 900 )
+    $('#wr'              ).fadeIn( 1000 )
+    $('#timer'           ).fadeIn(1000)
+    $('#down'            ).fadeIn(1000)
     console.log('wrong: ', numberDown)
     if (numberDown === 10) {
 
