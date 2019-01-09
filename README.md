@@ -21,7 +21,7 @@
 <hr>
 <H3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click on the image below to begin:</h3>
 <hr>
-<a href="https://rogueathletic.github.io/trivia-game/" target="_blank" alt="link to Jason Schutz Trivia Game"><img src="https://i.https://i.postimg.cc/B6tjbh2R/git-hub-promo-image.png" title="link to Jason Schutz Trivia Game" width="auto" height="auto" target="_blank"></a>
+<a href="https://rogueathletic.github.io/trivia-game/" target="_blank" alt="link to Jason Schutz Trivia Game"><img src="https://i.postimg.cc/B6tjbh2R/git-hub-promo-image.png" title="link to Jason Schutz Trivia Game" width="auto" height="auto" target="_blank"></a>
 <hr>
   <hr>
   <hr>
