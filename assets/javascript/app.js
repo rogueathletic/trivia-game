@@ -25,13 +25,9 @@ var theWrongAnswer3 = [];
 var numberUp = "";
 var numberDown = "";
 var numberLeft = "";
-gameOver()
 
-function gameOver(){
-var gameOver = parseInt($('#scoreUp').text());
-}
 
-// newGame()
+
 
 function newGame() {
 
@@ -200,15 +196,15 @@ function timer() { /* --->  <--- */
 
 }
 
-function displayCount(count) { /* --------------------------------------------------> sends the timer to the screen <----------- */
-    var res = count / 1000; /* ---------------------------------------> the timing for each interval of time change <----------- */
+function displayCount(count) { /* ------------> sends the timer to the screen <------------------------- */
+    var res = count / 1000; 
 
     document.getElementById("timer")
         .innerHTML = Math.ceil(res);
 
 }
-/* ---------------------------------------------------------> on click funcitions begin <---------- */
-$('#start').on('click', function () { /* -------------------> action to start game <--------------- */
+/* -------------------------------------------> event handler to start game begin <--------------------- */
+$('#start').on('click', function () {
 
     $(this).parent().hide() /* -----------------------------> hides the start button <------------- */
     $('#ans1').parent().fadeIn(1000) /* --------------------> brings in answer 1 <----------------- */
@@ -242,7 +238,7 @@ $('#start').on('click', function () { /* -------------------> action to start ga
 
 });
 
-/* --------------------------------------------> correct answer <---------- */
+/* --------------------------------------------> correct answer <--------------------------------------- */
 $('#ans1').parent().on('click', function () {
     setTimeout(function () {
         nextQuestion()
@@ -279,7 +275,6 @@ $('#ans1').parent().on('click', function () {
         $('#score-up').hide();
         $('#options').fadeOut();
         $('#ql').fadeOut(2000);
-        // $('#timer').fadeOut(2000)
         $('#quiz').fadeOut(2000);
         $('#wr').fadeOut(2000);
         $('#up').fadeOut();
@@ -296,7 +291,7 @@ $('#ans1').parent().on('click', function () {
     }
 
 });
-/* ---------------------------------------> incorrect answer <---------- */
+/* --------------------------------------------> incorrect answer <------------------------------------- */
 $('#ans2').parent().on('click', function () {
     var numberDown = parseInt($('#down').text());
     numberDown += 1;
@@ -306,10 +301,10 @@ $('#ans2').parent().on('click', function () {
     $('#wr').fadeIn(1000)
     $('#timer').fadeIn(1000)
     $('#down').fadeIn(1000)
-    console.log('wrong: ', numberDown)
+
     if (numberDown === 10) {
 
-        $("#timer").text("you loose, you only got  a few answers correct!")
+        $('#quiz').text("Time Is up you didnt win this round. Are you ready to try your luck again?")
         clearInterval(counter);
         $('#start').parent().show(8000)
         $('#score-up').fadeOut(2000)
@@ -320,15 +315,19 @@ $('#ans2').parent().on('click', function () {
         $('#quiz').fadeOut(2000)
         $('#wr').fadeOut(2000)
         $('#up').fadeOut(2000)
-        console.log('$("#timer").text()', $("#timer").text());
 
         count = initial;
         clearInterval(counter);
+        clearInterval(quesList);
+        clearInterval(numberDown);
+        clearInterval(numberUp);
         displayCount(count);
+
+
         return;
     }
 });
-/* --------------------------------------> incorrect answer <---------- */
+/* --------------------------------------------> incorrect answer <------------------------------------- */
 $('#ans3').parent().on('click', function () {
     var numberDown = parseInt($('#down').text());
     numberDown += 1;
@@ -338,9 +337,34 @@ $('#ans3').parent().on('click', function () {
     $('#wr').fadeIn(1000)
     $('#timer').fadeIn(1000)
     $('#down').fadeIn(1000)
-    console.log('wrong again: ', numberDown)
+
+    if (numberDown === 10) {
+
+        $('#quiz').text("Time Is up you didnt win this round. Are you ready to try your luck again?")
+
+        clearInterval(counter);
+        $('#start').parent().show(8000)
+        $('#score-up').fadeOut(2000)
+        $('#down').fadeOut(2000)
+        $('#options').fadeOut()
+        $('#ql').fadeOut(2000)
+        $('#timer').fadeOut(2000)
+        $('#quiz').fadeOut(2000)
+        $('#wr').fadeOut(2000)
+        $('#up').fadeOut(2000)
+
+        count = initial;
+        clearInterval(counter);
+        clearInterval(quesList);
+        clearInterval(numberDown);
+        clearInterval(numberUp);
+        displayCount(count);
+
+
+        return;
+    }
 });
-/* --------------------------------------> incorrect answer <---------- */
+/* --------------------------------------------> incorrect answer <------------------------------------- */
 $('#ans4').parent().on('click', function () {
     var numberDown = parseInt($('#down').text());
     numberDown += 1;
@@ -350,9 +374,33 @@ $('#ans4').parent().on('click', function () {
     $('#wr').fadeIn(1000)
     $('#timer').fadeIn(1000)
     $('#down').fadeIn(1000)
-    console.log('your not very good at this: ', numberDown)
+
+    if (numberDown === 10) {
+
+        $('#quiz').text("Time Is up you didnt win this round. Are you ready to try your luck again?")
+        clearInterval(counter);
+        $('#start').parent().show(8000)
+        $('#score-up').fadeOut(2000)
+        $('#down').fadeOut(2000)
+        $('#options').fadeOut()
+        $('#ql').fadeOut(2000)
+        $('#timer').fadeOut(2000)
+        $('#quiz').fadeOut(2000)
+        $('#wr').fadeOut(2000)
+        $('#up').fadeOut(2000)
+
+        count = initial;
+        clearInterval(counter);
+        clearInterval(quesList);
+        clearInterval(numberDown);
+        clearInterval(numberUp);
+        displayCount(count);
+
+
+        return;
+    }
 });
-/* -------------------------> sets answer position randomly <---------- */
+/* --------------------------------------------> sets answer position randomly <---------- */
 var answerRandom = options.children
 
 function newQPosition() {
@@ -363,8 +411,3 @@ function newQPosition() {
         options.appendChild(randomizer)
     }
 };
-
-
-
-
-// $("#score-Up").animate({left: '30%'});
