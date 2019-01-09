@@ -1,318 +1,366 @@
-/* manages the stretch and placement of the background image  */
-#body {
-  width: 100%;
-  height: auto;
-  margin-top: 0%;
-  background-size: cover;
-  background-position: top;
-  background-repeat: repeat;
-  background-image: url("./assets/ok.png"), url("https://i.postimg.cc/1RMSXrcH/libraryhuge.jpg");
-}
+$(document).ready(function () {
+    console.log("lets play!");
+    /* ----------------> below is how the  game is formatted on load <------------------ */
+    $('#ans1').parent().hide()
+    $('#ans2').parent().hide()
+    $('#ans3').parent().hide()
+    $('#ans4').parent().hide()
+    $('#quiz').hide()
+    $('#score-up').hide()
+    $('.game-over').hide()
+    $('#up').hide()
+    $('#down').hide()
+    $('#wr').hide()
+    $('#ql').hide()
+    /* ----------------> makes sure the question posting order is random <------------------ */
+    newQPosition()
+    /* ---------------->  <------------------ */
+});
 
-/* sets absolute center for the answer buttons                      */
-.box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+var questionList = [];
+var theGoodAnswer = [];
+var theWrongAnswer1 = [];
+var theWrongAnswer2 = [];
+var theWrongAnswer3 = [];
+var numberUp = "";
+var numberDown = "";
+var numberLeft = "";
 
-.box div {
-  width: auto;
-  height: 200px;
-}
 
-/* sets absolute center for the start button                       */
-.box1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.box1 div {
-  width: 100px;
-  height: 100px;
-}
 
-/*  manages the look and feel of the buttons in the game but not the start button  */
-.btn {
+newGame()
 
-  width: 90%;
-  height: auto;
-  display: flex;
-  min-width: 70%;
-  margin-top: 1em;
-  padding-top: 1em;
-  margin-left: -5%;
-  border-radius: 1em;
-  text-align: center;
-  background-size: 40%;
-  justify-content: center;
-  background-color: transparent;
-  box-shadow: 8px 8px rgba(0, 0, 0, .6);
-  text-shadow: 2px 2px 2px rgba(51, 70, 62, .8);
-  background-image: linear-gradient(90deg, rgba(51, 70, 62, .1), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
-    rgba(51, 70, 62, 0.548), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2), rgba(51, 70, 62, .1));
-}
+function newGame() {
 
-/* sets animation rules for the answer buttons                       */
-.btn:hover {
-  background-color: rgba(0, 217, 255, 0.4);
-  box-shadow: 3px 3px rgba(0, 0, 0, .6);
-}
+    var queryURL = "https://opentdb.com/api.php?amount=10&type=multiple"
 
-/* sets rules for the answer buttons on screen size lower than 500px  */
-@media only screen and (max-width: 500px) {
-  .btn {
-    background-color: rgb(0, 0, 0);
-    text-shadow: 2px, 2px, 3px rgb(51, 70, 62);
-    padding-top: 2%;
-    font-size: 10pt;
-    border-radius: .5em;
-    margin-top: 10px;
-    margin-left: -20%;
-    background-color: transparent;
-    min-width: 180px;
-    max-width: 180px;
-    text-justify: inter-word;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
 
-  }
-}
+    }).then(function (response) {
 
-/*     header begin                                                    */
-#header {
-  width: 100%;
-  float: none;
-  z-index: 999;
-  height: auto;
-  position: fixed;
-  vertical-align: top;
-  display: inline-block;
-  background-image: linear-gradient(rgb(51, 70, 62), rgba(51, 70, 62, .0));
-}
+        var QuestionsLeft = 10;
+        var questionDiv = $("<div>");
+        var p = $("<p>").html(response.results[0].question);
+        $(questionDiv).append(p);
 
-/*     header end                                                      */
-/*     footer begin                                                    */
+        /* ----------------> where the 10 questions are called from <------------------------------ */
+        questionList = [
+            (response.results[0].question),
+            (response.results[1].question),
+            (response.results[2].question),
+            (response.results[3].question),
+            (response.results[4].question),
+            (response.results[5].question),
+            (response.results[6].question),
+            (response.results[7].question),
+            (response.results[8].question),
+            (response.results[9].question)
+        ]
+        /* ----------------> where the 10 correct answers are called from <------------------------ */
+        theGoodAnswer = [
+            (response.results[0].correct_answer),
+            (response.results[1].correct_answer),
+            (response.results[2].correct_answer),
+            (response.results[3].correct_answer),
+            (response.results[4].correct_answer),
+            (response.results[5].correct_answer),
+            (response.results[6].correct_answer),
+            (response.results[7].correct_answer),
+            (response.results[8].correct_answer),
+            (response.results[9].correct_answer)
+        ]
 
-/*      this is for the © 2019 | jason schutz in the footer            */
-.dropbtn {
-  z-index: -5;
-  border: none;
-  padding: 10px;
-  color: white;
-  font-size: 12px;
-  justify-content: center;
-  background-color: transparent;
-}
+        /* ----------------> where the 10 incorrect #1 answers are called from <------------------- */
+        wrongAnswer1 = [
+            (response.results[0].incorrect_answers[0]),
+            (response.results[1].incorrect_answers[0]),
+            (response.results[2].incorrect_answers[0]),
+            (response.results[3].incorrect_answers[0]),
+            (response.results[4].incorrect_answers[0]),
+            (response.results[5].incorrect_answers[0]),
+            (response.results[6].incorrect_answers[0]),
+            (response.results[7].incorrect_answers[0]),
+            (response.results[8].incorrect_answers[0]),
+            (response.results[9].incorrect_answers[0])
+        ]
+        /* ----------------> where the 10 incorrect #2 answers are called from <------------------- */
+        wrongAnswer2 = [
+            (response.results[0].incorrect_answers[1]),
+            (response.results[1].incorrect_answers[1]),
+            (response.results[2].incorrect_answers[1]),
+            (response.results[3].incorrect_answers[1]),
+            (response.results[4].incorrect_answers[1]),
+            (response.results[5].incorrect_answers[1]),
+            (response.results[6].incorrect_answers[1]),
+            (response.results[7].incorrect_answers[1]),
+            (response.results[8].incorrect_answers[1]),
+            (response.results[9].incorrect_answers[1])
+        ]
 
-/*     header end                                                      */
-#footer {
-  z-index: -55;
-  margin-top: 10%;
-  background-image: linear-gradient(rgba(51, 70, 62, .0), rgb(51, 70, 62));
-}
+        /* ----------------> where the 10 incorrect #3 answers are called from <------------------- */
+        wrongAnswer3 = [
+            (response.results[0].incorrect_answers[2]),
+            (response.results[1].incorrect_answers[2]),
+            (response.results[2].incorrect_answers[2]),
+            (response.results[3].incorrect_answers[2]),
+            (response.results[4].incorrect_answers[2]),
+            (response.results[5].incorrect_answers[2]),
+            (response.results[6].incorrect_answers[2]),
+            (response.results[7].incorrect_answers[2]),
+            (response.results[8].incorrect_answers[2]),
+            (response.results[9].incorrect_answers[2])
+        ]
+    })
+};
 
-/*     footer end                                                       */
-/*     floating containerr for the whole game                           */
-#jumbotron {
-  width: 90%;
-  height: 90%;
-  z-index: -1;
-  margin: auto;
-  margin-top: 12%;
-  margin-left: 5%;
-  margin-bottom: 5%;
-  border-radius: 20px;
-  justify-self: center;
-  background-size: 100%;
-  background-color: transparent;
-  box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  -moz-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  -webkit-box-shadow: 20px 20px 57px 9px rgba(51, 70, 62, .2);
-  background-image: radial-gradient(rgba(51, 70, 62, .4), rgba(51, 70, 62, .4), rgba(51, 70, 62, .4));
-}
+/* ----------------> global variable for when a new game is called <------------------ */
+newGame()
 
-/*     this is the div that contains the appended questions            */
-#quiz {
-  left: auto;
-  width: auto;
-  margin: 1em;
-  z-index: -999;
-  color: white;
-  font-size: 32px;
-  text-align: center;
-  text-shadow: 3px 3px 3px rgb(51, 70, 62);
-  background-image: linear-gradient(90deg, rgba(51, 70, 62, .002), rgba(51, 70, 62, .2), rgba(51, 70, 62, .4),
-    rgba(51, 70, 62, .500), rgba(51, 70, 62, .4), rgba(51, 70, 62, .2),
-    rgba(51, 70, 62, .002));
-}
+/* ----------------> Timeing Variables <------------------ */
+var initial = 15000;
+var count = initial;
+var counter = 1000; //10 will  run it every 100th of a second
+var decimals = 4;
 
-/*     start button for game                                            */
-#start {
-  background-image: url("https://i.postimg.cc/V6W8jqyz/start-off.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  z-index: 9999999999;
+//this variable tells the below nextElement function to only move one comma at a time on command
+/* ----------------> the number position the new Q&A will move through the quiz <------------------ */
+var answerIndex = 1
+var answerIndex1 = 1
+var answerIndex2 = 1
+var answerIndex3 = 1
+
+function nextQuestion() {
+
+    newQPosition()
+
+    currentIndex++
+
+    var quesList = document.getElementById('quiz');
+    var theGoodAns = document.getElementById('ans1');
+    var wrongAns1 = document.getElementById('ans2');
+    var wrongAns2 = document.getElementById('ans3');
+    var wrongAns3 = document.getElementById('ans4');
+
+
+    quesList.innerHTML = questionList[currentIndex];
+    theGoodAns.innerHTML = theGoodAnswer[currentIndex];
+    wrongAns1.innerHTML = wrongAnswer1[currentIndex];
+    wrongAns2.innerHTML = wrongAnswer2[currentIndex];
+    wrongAns3.innerHTML = wrongAnswer3[currentIndex];
 
 }
 
-/*     color variance for start button for game                         */
-#start:hover {
-  background-image: url("https://i.postimg.cc/D0fK5SFL/start-hover.png");
+// this is how the questions load to the game on start
+
+var questionList = document.getElementById('quiz');
+var theGoodAnswer = document.getElementById('ans1');
+var wrongAnswer1 = document.getElementById('ans2');
+var wrongAnswer2 = document.getElementById('ans3');
+var wrongAnswer3 = document.getElementById('ans4');
+
+/* ----------------------------------------> sends answers to id in DOM <----------- */
+$("#quiz").append(questionList);
+$("#ans1").append(theGoodAnswer);
+$("#ans2").append(wrongAnswer1);
+$("#ans3").append(wrongAnswer2);
+$("#ans4").append(wrongAnswer3);
+/* -----------------------------------------> timer begin <------------------------- */
+function timer() { /* --->  <--- */
+
+    if (--count == 0) {
+        stopTimer();
+    }
+    if (count <= 1) {
+        newGame()
+        $('#quiz').text("Time Is up you only got " + numberUp + " correct! Are you ready to try your luck again?")
+        $('#start').parent().show(500)
+        $('#timer').fadeOut()
+        $('#options').fadeOut()
+        $('#ql').fadeOut(6000)
+        $('#down').fadeOut(3000)
+        $('#scoreUp').fadeOut(3000)
+        $('#wr').fadeOut(3000)
+        $('#up').fadeOut(3000)
 
 
-}
-
-/*     color pop on click for start button                               */
-#start:active {
-  background-image: url("https://i.postimg.cc/x8sVZ9T7/start.png");
-
-}
-
-/*     color and position for the "correct: " and the Score #           */
-#score-up,
-#up {
-  color: yellowgreen;
-  text-align: left;
-  text-shadow: 4px 4px 5px rgb(51, 70, 62);
-
-}
-
-/*     sets position and color of time clock                            */
-#timer {
-  color: white;
-  font-size: 30pt;
-  text-shadow: 4px 4px 5px rgb(51, 70, 62);
-  float: right;
-  justify-content: right;
-  z-index: 9999999999;
-  position: static;
-
-}
-
-/*     color and position for the "incorrect: " and the Score #         */
-#down,
-#wr {
-  color: red;
-
-  text-shadow: 4px 4px 5px rgb(51, 70, 62);
-  text-align: right;
-  z-index: 999;
-
-}
-
-
-/*     the physical questions presented to the DOM                      */
-#ql {
-  color: white;
-  text-shadow: 1 1 4px rgba(51, 70, 62, 1);
-  Float: center;
-  z-index: 999;
-  text-align: center;
-
+        count = initial;
+        clearInterval(counter)
+        return;
+    };
+    var current = Date.now()
+    count = count - (current - initialMillis);
+    initialMillis = current;
+    displayCount(count);
 
 }
 
-#rules {
-  text-align: justify;
-}
+function displayCount(count) { /* --------------------------------------------------> sends the timer to the screen <----------- */
+    var res = count / 1000; /* ---------------------------------------> the timing for each interval of time change <----------- */
 
-#questions-left {
-  margin-top: 11pt;
-  margin-left: 2pt;
-}
-
-#winner {
-  width: auto;
-  Margin-bottom: 3.5%;
-}
-
-#final-score {
-  width: auto;
+    document.getElementById("timer")
+        .innerHTML = Math.ceil(res);
 
 }
+/* ---------------------------------------------------------> on click funcitions begin <---------- */
+$('#start').on('click', function () { /* -------------------> action to start game <--------------- */
 
-@media only screen and (max-width: 500px) {
+    $(this).parent().hide() /* -----------------------------> hides the start button <------------- */
+    $('#ans1').parent().fadeIn(1000) /* --------------------> brings in answer 1 <----------------- */
+    $('#ans2').parent().fadeIn(1200) /* --------------------> brings in answer 2 <----------------- */
+    $('#ans3').parent().fadeIn(1400) /* --------------------> brings in answer 3 <----------------- */
+    $('#ans4').parent().fadeIn(1600)
+    $('#quiz').html(questionList[0])
+    $('#timer').fadeIn(1000)
+    $('#quiz').fadeIn(1800) /* -----------------> brings in the question to be answered <---------- */
+    $('#options').fadeIn() /* ------------------> brings in answer 4 <----------------------------- */
+    $('#ql').fadeIn(1000) /* -------------------> brings in the questions left counter <----------- */
 
-  #start,
-  #start:hover,
-  #start:Active {
+    currentIndex = 0;
+
+    initialMillis = Date.now();
+    counter = setInterval(timer, 1000)
+
+    var quesList = document.getElementById('quiz');
+    var theGoodAns = document.getElementById('ans1');
+    var wrongAns1 = document.getElementById('ans2');
+    var wrongAns2 = document.getElementById('ans3');
+    var wrongAns3 = document.getElementById('ans4');
 
 
-    text-align: center;
-    background-size: 60%;
-    position: static;
-    margin-left: 30%;
-    z-index: 9999999999;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #down {
-    margin-top: 0%;
-    margin-left: 80%;
-    font-size: 10pt;
-    ;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #score-up {
-    margin-left: -238%;
-    margin-left: 80%;
-
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  #timer {
-    font-size: 22px;
-    font-size: 10pt;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-
-  #wr,
-  #up,
-  #down,
-  #score-up {
-    font-size: 10pt;
-
-  }
-}
-
-@media only screen and (max-width: 500px) {
+    quesList.innerHTML = questionList[0];
+    theGoodAns.innerHTML = theGoodAnswer[0];
+    wrongAns1.innerHTML = wrongAnswer1[0];
+    wrongAns2.innerHTML = wrongAnswer2[0];
+    wrongAns3.innerHTML = wrongAnswer3[0];
 
 
 
-  #score-up {
-    text-align: left;
-  }
-}
+});
 
-@media only screen and (max-width: 500px) {
-  #quiz {
-    font-size: 12pt;
+/* --------------------------------------------> correct answer <---------- */
+$('#ans1').parent().on('click', function () {
+    setTimeout(function () {
+        nextQuestion()
+    }, 1000)
 
-  }
-}
+    $('#jumbotron').fadeOut(1000).fadeIn(1000);
+    $("#ans2").parent().fadeIn(900);
+    $("#ans3").parent().fadeIn(900);
+    $("#ans4").parent().fadeIn(900);
+    $('#score-up').fadeIn(1000);
+    $('#up').text("Correct:");
+    $('#up').fadeIn(1000);
 
-@media only screen and (max-width: 500px) {
-  #up {
-    text-align: left;
 
-  }
-}
+    clearInterval(counter);
+    initialMillis = Date.now();
+    counter = setInterval(timer, 1000)
+    count = initial;
+    displayCount(count);
+    var numberUp = parseInt($('#score-up').text());
+    numberUp += 1;
+    var numberLeft = parseInt($('#questions-left').text());
+    numberLeft -= 1;
+    $('#score-up').text(numberUp);
+    $('#questions-left').text(numberLeft);
+    if (numberLeft === 0) {
 
-@media (min-width: 768px) {
-  #header {
-    display: inline-block;
-    float: none;
-    vertical-align: top;
-    text-align: center;
-  }
-}
+        $("#timer").text("you got  " + numberUp + " answer correct!")
+        $("#winner").html("<br><div>Your a winner!</div>")
+        $('#start').parent().show(8000)
+        $('#down').fadeOut(2000)
+        $('#score-up').fadeOut()
+        $('#options').fadeOut()
+        $('#ql').fadeOut(2000)
+        // $('#timer').fadeOut(2000)
+        $('#quiz').fadeOut(2000)
+        $('#wr').fadeOut(2000)
+        $('#up').fadeOut(2000)
+        console.log('$("#timer").text()', $("#timer").text());
+        count = initial;
+        clearInterval(counter);
+        clearInterval(quesList);
+        clearInterval(numberDown);
+        clearInterval(numberup);
+        displayCount(count);
+
+
+        return;
+    }
+
+});
+/* ---------------------------------------> incorrect answer <---------- */
+$('#ans2').parent().on('click', function () {
+    var numberDown = parseInt($('#down').text());
+    numberDown += 1;
+    $('#down').text(numberDown).fadeIn(3000);
+    $('#wr').text("Wrong: ");
+    $("#ans2").parent().fadeOut(900)
+    $('#wr').fadeIn(1000)
+    $('#timer').fadeIn(1000)
+    $('#down').fadeIn(1000)
+    console.log('wrong: ', numberDown)
+    if (numberDown === 10) {
+
+        $("#timer").text("you loose, you only got  " + numberDown + " answers correct!")
+        clearInterval(counter);
+        $('#start').parent().show(8000)
+        $('#score-up').fadeOut(2000)
+        $('#down').fadeOut(2000)
+        $('#options').fadeOut()
+        $('#ql').fadeOut(2000)
+        $('#timer').fadeOut(2000)
+        $('#quiz').fadeOut(2000)
+        $('#wr').fadeOut(2000)
+        $('#up').fadeOut(2000)
+        console.log('$("#timer").text()', $("#timer").text());
+
+        count = initial;
+        clearInterval(counter);
+        displayCount(count);
+        return;
+    }
+});
+/* --------------------------------------> incorrect answer <---------- */
+$('#ans3').parent().on('click', function () {
+    var numberDown = parseInt($('#down').text());
+    numberDown += 1;
+    $('#down').text(numberDown).fadeIn(3000);
+    $('#wr').text("Wrong: ");
+    $('#ans3').parent().fadeOut(900)
+    $('#wr').fadeIn(1000)
+    $('#timer').fadeIn(1000)
+    $('#down').fadeIn(1000)
+    console.log('wrong again: ', numberDown)
+});
+/* --------------------------------------> incorrect answer <---------- */
+$('#ans4').parent().on('click', function () {
+    var numberDown = parseInt($('#down').text());
+    numberDown += 1;
+    $('#down').text(numberDown).fadeIn(3000);
+    $('#wr').text("Wrong: ");
+    $('#ans4').parent().fadeOut(900)
+    $('#wr').fadeIn(1000)
+    $('#timer').fadeIn(1000)
+    $('#down').fadeIn(1000)
+    console.log('your not very good at this: ', numberDown)
+});
+/* -------------------------> sets answer position randomly <---------- */
+var answerRandom = options.children
+
+function newQPosition() {
+    var options = document.querySelector('#options');
+    for (var i = options.children.length; i >= 0; i--) {
+        var randomizer = options.children[(Math.floor(Math.random() * i))];
+
+        options.appendChild(randomizer)
+    }
+};
+
+
+
+
+// $("#score-Up").animate({left: '30%'});
