@@ -2,7 +2,7 @@
 <h1> UCSD full stack coding bootcamp </h1>
   <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;week 5 trivia game easier version</h2>
 <p style="text-align:justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to around the world trivia. You will have 15 seconds per question to correctly answer 1 of ten random questions pulled form the web for your trivia pleasure. Watch out tho, wrong answers are recorded too. If you can guess all ten questions correctly in time you win! </p>
-<p style="text-align:justify;">The most chalenging part of the project was the option I chose to use over inputting a standard array of questions. The complexity between the two options was not the issue rather the ability to structure order in a random event. Choosing to utilize a single primary button to designate its value wound up being a simple math equation not propogated to the individual button elements; rather, a container "div" to surround the four possible options associated with the answers. By setting the ranndom occurance to occur outside the confinds of my Javascript code. I was left with the information I needed to complete the project. this was a great and challenging learning experence for so many different reasons. 
+
   
 <p style="text-align:justify;">Some of the primary tools used to compelte this project:</p>
 <ul>
