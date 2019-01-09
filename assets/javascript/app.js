@@ -274,18 +274,33 @@ $('#ans1').parent().on('click', function () {
         $('#down').fadeOut();
         $('#score-up').hide();
         $('#options').fadeOut();
-        $('#ql').fadeOut(2000);
-        $('#quiz').fadeOut(2000);
-        $('#wr').fadeOut(2000);
+        $('#ql').fadeOut();
+        $('#quiz').fadeOut();
+        $('#wr').fadeOut();
         $('#up').fadeOut();
+
         $("#score-up").text(0);
+        $("#down").text(0);
+ 
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
         count = initial;
         clearInterval(counter);
         clearInterval(quesList);
         clearInterval(numberDown);
+        clearInterval(numberLeft);
         clearInterval(numberUp);
         clearInterval(count);
 
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
+        
 
         return;
     }
@@ -316,13 +331,29 @@ $('#ans2').parent().on('click', function () {
         $('#wr').fadeOut(2000)
         $('#up').fadeOut(2000)
 
+        $("#score-up").text(0);
+        $("#down").text(0);
+        $("#questions-left").text(10);
+
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
         count = initial;
         clearInterval(counter);
         clearInterval(quesList);
         clearInterval(numberDown);
+        clearInterval(numberLeft);
         clearInterval(numberUp);
         clearInterval(count);
 
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
+        
 
         return;
     }
@@ -353,13 +384,29 @@ $('#ans3').parent().on('click', function () {
         $('#wr').fadeOut(2000)
         $('#up').fadeOut(2000)
 
+        $("#score-up").text(0);
+        $("#down").text(0);
+        $("#questions-left").text(10);
+
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
         count = initial;
         clearInterval(counter);
         clearInterval(quesList);
         clearInterval(numberDown);
+        clearInterval(numberLeft);
         clearInterval(numberUp);
         clearInterval(count);
 
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
+        
 
         return;
     }
@@ -379,23 +426,39 @@ $('#ans4').parent().on('click', function () {
 
         $('#quiz').text("Time Is up you didnt win this round. Are you ready to try your luck again?")
         clearInterval(counter);
-        $('#start').parent().show(8000)
-        $('#score-up').fadeOut(2000)
-        $('#down').fadeOut(2000)
-        $('#options').fadeOut()
-        $('#ql').fadeOut(2000)
-        $('#timer').fadeOut(2000)
-        $('#quiz').fadeOut(2000)
-        $('#wr').fadeOut(2000)
-        $('#up').fadeOut(2000)
+        $('#start').parent().show(8000);
+        $('#score-up').fadeOut(2000);
+        $('#down').fadeOut(2000);
+        $('#options').fadeOut();
+        $('#ql').fadeOut(2000);
+        $('#timer').fadeOut(2000);
+        $('#quiz').fadeOut(2000);
+        $('#wr').fadeOut(2000);
+        $('#up').fadeOut(2000);
+
+       $("#score-up").text(0);
+        $("#down").text(0);
+        $("#questions-left").text(10);
+
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
 
         count = initial;
         clearInterval(counter);
         clearInterval(quesList);
         clearInterval(numberDown);
+        clearInterval(numberLeft);
         clearInterval(numberUp);
         clearInterval(count);
 
+        var current = Date.now()
+        count = count - (current - initialMillis);
+        initialMillis = current;
+        displayCount(count);
+
+        
 
         return;
     }
