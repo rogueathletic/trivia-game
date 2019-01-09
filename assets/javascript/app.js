@@ -309,7 +309,7 @@ $('#ans2').parent().on('click', function () {
     console.log('wrong: ', numberDown)
     if (numberDown === 10) {
 
-        $("#timer").text("you loose, you only got  " + numberDown + " answers correct!")
+        $("#timer").text("you loose, you only got  a few answers correct!")
         clearInterval(counter);
         $('#start').parent().show(8000)
         $('#score-up').fadeOut(2000)
