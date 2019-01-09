@@ -243,7 +243,7 @@ $('#ans1').parent().on('click', function () {
     setTimeout(function () {
         nextQuestion()
     }, 1000)
-    if(numberUp == 0){
+    if(numberUp == 10){
         Alert("Your A Winner!")
     }
     $('#jumbotron').fadeOut(1000).fadeIn(1000);
@@ -266,7 +266,7 @@ $('#ans1').parent().on('click', function () {
     numberLeft -= 1;
     $('#score-up').text(numberUp);
     $('#questions-left').text(numberLeft);
-    if (numberLeft == 10) {
+    if (numberLeft == 0) {
 
         $("#timer").text("you got  " + numberUp + " answer correct!");
         $("#winner").html("<br><div>Your a winner!</div>");
